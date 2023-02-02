@@ -5,74 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legacy Lau Gar</title>
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="icon" type="image/x-icon" href="/images/dragonFavicon.ico">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        $(function(){
+          $("#header").load("header.html"); 
+          $("#footer").load("footer.html"); 
+        });
+    </script> 
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar__container">
-            <!-- Navbar Logo -->
-            <a href="/index.html" id="navbar__logo">LEGACY LAUGAR</a>
-            <!-- Mobile Menu -->
-            <div class="navbar__toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <!-- Navbar Menu -->
-            <ul class="navbar__menu">
-                <!-- Home -->
-                <li class="navbar__item">
-                    <a href="/index.html" class="navbar__links">
-                        Home
-                    </a>
-                </li>
-                <!-- About Us -->
-                <li class="navbar__item">
-                    <a href="/about.html" class="navbar__links">
-                        About
-                    </a>
-                </li>
-                <!-- Contact Us -->
-                <li class="navbar__item">
-                    <a href="/contact.html" class="navbar__links">
-                        Contact Us
-                    </a>
-                </li>
-                <!-- Gallery -->
-                <li class="navbar__item">
-                    <a href="/gallery.html" class="navbar__links">
-                        Gallery
-                    </a>
-                </li>
-                <!-- Sessions -->
-                <li class="navbar__btn">
-                    <a href="/sessions.html" class="button">
-                        Sessions
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </nav>
+    <div id="header"></div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section   -->
     <div class="main">
         <div class="main__container">
             <div class="main__content">
                 <h1>Legacy Lau Gar</h1>
-                <h2>Nuneaton</h2>
-                <p>lorem ipsum here</p>
-                <button class="main__btn">
-                    <a href="/">Button</a>
-                </button>
+                <h2>Kung Fu</h2>
+                <p>Nuneaton Lau Gar club has been established for over 30 years, we are now looking for new members to join us.</p>
+                <button class="main__btn">Contact Us For More Info</button>
             </div>
-            <div class="main__img--container">
-                <img src="images/pic1.svg" alt="pic" id="main__main">
+            <div class="main_img--container">
+                <img src="images/dragonMain.webp" alt="Legacy Lau Gar Dragon" id="main__img">
             </div>
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <div id="footer"></div>
 </body>
 </html>
