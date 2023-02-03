@@ -99,7 +99,7 @@
 }
 
 .button:hover{
-    background: silver;
+    background: red;
     transition: all 0.3s ease;
 }
 
