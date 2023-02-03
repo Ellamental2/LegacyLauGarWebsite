@@ -3,14 +3,13 @@
     margin: 0;
     padding: 0;
     font-family: 'Public Sans', sans-serif;
-    background: #141414;
+    background-color: #151515;
 }
 
 .navbar{
     background: #131313;
     height: 80px;
     width: 100%;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,6 +45,11 @@
 }
 
 .navbar__dragon {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.footer__dragon {
     height: 50px;
     margin-right: 10px;
 }
@@ -129,7 +133,7 @@
         top: 100%;
         opacity: 1;
         transition: all 0.5s ease;
-        z-index: 99;
+        z-index: 5;
         height: 50vh;
         font-size:1.6rem;
     }
@@ -201,7 +205,7 @@
     justify-self: center;
     margin: 0 auto;
     height: 90vh;
-    background-color: #141414;
+    background-color: #151515;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
@@ -276,7 +280,6 @@
     background: red;
     transition: all 0.35s;
     border-radius: 4px;
-    z-index: 2;
 }
 
 .main__btn:hover {
@@ -292,8 +295,9 @@
 }
 
 #main__img {
-    height:80%;
+    height: 80%;
     width: 80%;
+    min-height: 300px;
 }
 
 .main__map {
@@ -367,5 +371,265 @@
 
     .main__image{
         height: 50%;
+        min-height: 200px;
+    }
+}
+
+/* Welcome Section */
+
+.welcome {
+    background-color: #151515;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.welcome h1 {
+    background-color: gold;
+    background-image: linear-gradient(to right, gold 0%, silver 100%);
+    background-size: 100%;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.welcome__container {
+    background-color: #151515;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.welcome__card {
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    min-height: 300px;
+    min-width: 200px;
+    border-radius: 4px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(17,17,17, 0.6) 100%), url('/images/strongStance.jpg');
+    background-size: cover;
+    position:relative;
+    color: black;
+}   
+
+.welcome__card:nth-child(2) {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(17,17,17, 0.6) 100%), url('/images/flexibleKick.jpg');
+}
+
+.welcome__card:nth-child(3) {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(17,17,17, 0.6) 100%), url('/images/balance.jpg');
+}
+
+.welcome__card:nth-child(4) {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(17,17,17, 0.6) 100%), url('/images/confidence.jpg');
+}
+
+.welcome h2 {
+    position:absolute;
+    top: 350px;
+    left: 30px;
+    color: silver;
+    background-color: transparent;
+}
+
+.welcome__card p {
+    position: absolute;
+    top: 400px;
+    left: 30px;
+    color: silver;
+    background-color: transparent;
+}
+
+.welcome__card:hover {
+    transform: scale(1.075);
+    transition: 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 960px) {
+    .welcome {
+        height: 1600px;
+    }
+
+    .welcome h1 {
+        font-size: 2rem;
+        margin-top: 12rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .welcome {
+        height: 1400px;
+    }
+
+    .welcome h1 {
+        font-size: 1.2rem;
+    }
+
+    .welcome__card {
+        width: 300px;
+    }
+}
+
+.footer__container {
+    background-color: darkgoldenrod;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer__logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    background-color: gold;
+    background-image: linear-gradient(to top, gold 0% , silver 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.footer__links {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__links--wrapper{
+    display: flex;
+}
+
+.footer__link--items {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 16px;
+    text-align: left;
+    width: 320px;
+    box-sizing: border-box;
+}
+
+.footer__link--items h2 {
+    margin-bottom: 16px;
+}
+
+.footer__link--items > p {
+    color: gold;
+}
+
+.footer__link--items > h2 {
+    color: gold;
+}
+
+.footer__link--items a {
+    color: gold;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.footer__link--items a:hover {
+    color: red;
+    transition: 0.3s ease-out
+}
+
+.footer__bkfalogo{
+    width: 100%;
+    max-width: 209px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+/* Social Media */
+.social__icon--link {
+    color: gold;
+    font-size: 24px;
+}
+
+.social__media {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.social__media--wrap{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+}
+
+.social__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+}
+
+.social__logo {
+    color: gold;
+    justify-self: flex-start;
+    margin-left:20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 820px) {
+    .footer__links{
+        padding-top:2rem;
+    }
+
+    #footer__logo {
+        margin-bottom: 2rem;
+    }
+
+    .website__rights{
+        margin-bottom: 2rem;
+    }
+
+    .footer__links--wrapper{
+        flex-direction: column;
+    }
+    
+    .social__media--wrap{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer__link--items {
+        margin: 0;
+        padding: 10px;
+        width: 100%;
+        flex-direction: column;
     }
 }
