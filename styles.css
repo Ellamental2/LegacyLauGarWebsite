@@ -204,6 +204,11 @@
 body{
     background-color: #141414;
 }
+
+.main{
+    padding-top: 80px;
+    padding-bottom: 350px;
+}
 .main__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
