@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Lau Gar | Contact Us</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="icon" type="image/x-icon" href="images/dragonFavicon.ico">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        $(function(){
+          $("#header").load("header.html"); 
+          $("#footer").load("footer.html"); 
+        });
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+    <div class="main">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Contact the Club</h1>
+                <h3>If you are interested in joining the club or would like more information please feel free to reach out text, telephone or filling out the form!</h3><br><br>
+                <h2><i class="fas fa-phone"> Tel: 07724 635 552</i></h2>
+            </div>
+            <div class="contact__form--container">
+                <form class="contact__form" action="https://formsubmit.co/legacylgkf@gmail.com" method="POST">
+                    <!-- Name -->
+                    <div class="form__label"><label for="name" class="form__name">Name:</label></div>
+                    <div class="form__input"><input id="form__name" type="text" name="name" required></div>
+                    <!-- Email -->
+                    <div class="form__label"><label for="" class="form__email"> Email:</label></div>
+                    <div class="form__input"><input id="form__email" type="email" name="email" placeholder="Email Address" required></div>
+                    <!-- Subject -->
+                    <div class="form__label"><label for="" class="form__subject"> Subject:</label></div>
+                    <div class="form__subject"><input id="form__subject" type="text" name="subject"></div>
+                    <br>
+                    <!-- Message -->
+                    <div class="form__label"><label for="" class="form__message"> Message:</label></div>
+                    <div class="form__input"><input id="form__message" type="text" name="message" required></div>
+                    <!-- Submit -->
+                    <button id="form__btn" type="submit"><a>Send</a></button>
+                    <input type="hidden" name="_next" value="../thankyou.html">
+                    <input type="hidden" name="_subject" value="Website Contact Us Form Submision">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact__map--container" id="mapContainer">
+        <iframe id="GoogleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1716.4502734229513!2d-1.4606135913736602!3d52.52570347344711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487751e0e72ea22f%3A0x4d4c914b0f263075!2sEtone%20Sports%20Centre!5e0!3m2!1sen!2suk!4v1675697922108!5m2!1sen!2suk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>
