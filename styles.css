@@ -143,6 +143,8 @@
 
     #navbar__logo {
         padding-left: 25px;
+        width: 80%;
+        font-size: 1.4rem;
     }
 
     .navbar__toggle .bar {
@@ -207,8 +209,8 @@ body{
 
 .main{
     padding-top: 80px;
-    padding-bottom: 350px;
 }
+
 .main__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -223,18 +225,18 @@ body{
     padding: 0 50px;
 }
 
-.main__content h1{
-        font-size: 4rem;
-        color: gold;
-        background-image: linear-gradient(to top, #ffd700 0%, #c0c0c0 100%);
-        background-size: 100%;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-text-fill-color: transparent;
+.main__container h1 {
+    font-size: 4rem;
+    color: gold;
+    background-image: linear-gradient(to top, #ffd700 0%, #c0c0c0 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
 }
 
-.main__content h2{
+.main__container h2 {
     font-size: 3rem;
     color: red;
     background-image: linear-gradient(to top, red 0%, silver 100%);
@@ -245,18 +247,20 @@ body{
     -moz-text-fill-color: transparent;
 }
 
-.main__content h3{
+.main__container h3{
     margin-top: 1rem;
     font-size: 2rem;
     font-weight:700;
     color: silver;
 }
 
-.main__content p{
+.main__container p{
     margin-top: 1rem;
     font-size: 1rem;
     font-weight:700;
     color: silver;
+    display: flex;
+    justify-content: space-between;
 }
 
 .main__btn {
@@ -300,33 +304,29 @@ body{
 
 .main__btn:hover:after{
     width: 100%
-}
-
-.main__img--container {
-    text-align:center;
-    min-height:700px;
-}
+}   
 
 #main__img {
-    height: 700px;
-    width: auto;
+    max-height:100%;
+    max-width: 100%;
+    height: auto;
 }
 
 @media screen and (max-width: 768px) {
+
+    .main{        
+        padding-top: 350px;
+    }
+
     .main__container{
         display: grid;
-        grid-template-columns: auto;
-        align-items: center;
-        justify-self: center;
-        width:100%;
-        margin: 0 auto;
-        height: 90vh;
+        grid-template-columns: 1fr;
+        align-content: center;
     }
 
     .main__content {
         text-align: center;
-        margin-bottom: 4rem;
-    }
+    } 
 
     .main__content h1{
         font-size: 2.5rem;
@@ -341,30 +341,25 @@ body{
         margin-top: 1rem;
         font-size: 1.5rem;
     }
-    .main__content p2{
-        margin-top: 1rem;
-        font-size: 1rem;
-    }
-
 }
 
 @media screen and (max-width: 480px) {
-    .main__content h1{
+
+    
+    .main__container h1{
         font-size: 2rem;
-        margin-top: 3rem;
-    }
-
-    .main__content h2{
-        font-size: 1.5rem;
-    }
-
-    .main__content p{
-        margin-top: 2rem;
-        font-size: 1.5rem;
-    }
-
-    .main__content p2{
         margin-top: 1rem;
+        color: gold;
+    }
+    .main__container h2{
+        font-size: 1.5rem;
+        color: red;
+    }
+    .main__container h3{
+        font-size: 1.5rem;
+    }
+    .main__container p{
+        margin-top: 2rem;
         font-size: 1rem;
     }
 
@@ -372,28 +367,24 @@ body{
         padding: 12px 36px;
         margin: 2.5rem 0;
     }
-
-    .main__image{
-        height: 50%;
-        min-height: 200px;
-    }
 }
 
-/* benefit Section */
+/* Instagram feed Section */
 
+/* benefit Section */
 .benefit {
     background-color: #151515;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    margin-top: 1rem;
 }
 
-.benefit h1 {
+.benefit a {
     background-color: gold;
     background-image: linear-gradient(to right, gold 0%, silver 100%);
     background-size: 100%;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     font-size: 2.5rem;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -407,13 +398,20 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     height:100%;
-    max-width: 1200px;
+    max-width: 1100px;
+}
+
+.benefit__container h2 {
+    top: 350px;
+    left: 30px;
+    color: silver;
+    background-color: transparent;
 }
 
 .benefit__card {
     margin: 1rem;
-    height: 525px;
-    width: 400px;
+    height: 475px;
+    width: 360px;
     border-radius: 4px;
     background-image: linear-gradient(
         to bottom,
@@ -445,16 +443,8 @@ body{
         rgba(17,17,17, 0.6) 100%), url('images/confidence.jpg');
 }
 
-.benefit h2 {
-    position:absolute;
-    top: 350px;
-    left: 30px;
-    color: silver;
-    background-color: transparent;
-}
 
 .benefit__card p {
-    position: absolute;
     top: 400px;
     left: 30px;
     color: silver;
@@ -467,27 +457,31 @@ body{
 }
 
 @media screen and (max-width: 960px) {
-    .benefit {
-        height: 100%;
+
+    .benefit a{
+        font-size: 2rem;
+        margin-top: 300px
     }
 
-    .benefit h1 {
-        font-size: 2rem;
-        margin-top: 12rem;
+    .benefit__card p{
+        margin-top: 20rem;
     }
 }
 
 @media screen and (max-width: 480px) {
     .benefit {
-        height: 100%;
-    }
+        padding-top: 1rem;
 
-    .benefit h1 {
-        font-size: 1.2rem;
     }
-
+    .benefit a {
+        text-align: center;
+        font-size: 2rem;
+    }
+    
     .benefit__card {
-        width: 300px;
+        display: block;
+        width: 85%;
+        height: auto;
     }
 }
 
@@ -649,4 +643,75 @@ body{
         width: 100%;
         flex-direction: column;
     }
+}
+
+.contact__form--container{
+    display: flex;
+    padding-left: 24px;
+    width:100%;
+}
+
+.contact__form{
+    width:100%;
+}
+
+.form__label{
+    padding-top: 14px;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: silver;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.form__input{
+    width: 100%;
+}
+
+#form__message{
+    width:100%;
+    height: 100%;
+}
+
+#form__btn {
+    font-size: 1rem;
+    font-weight: bolder;
+    background-image: linear-gradient(to top, gold 0%, silver 100%);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s ease;
+    outline: none;
+}
+
+#form__btn a{
+    position: relative;
+    z-index: 2;
+    color: black;
+    text-decoration:none;
+    background-color: transparent;
+}
+
+#form__btn:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: red;
+    transition: all 0.35s;
+    border-radius: 4px;
+}
+
+#form__btn:hover {
+    color: black;
+}
+
+#form__btn:hover:after{
+    width: 100%
 }

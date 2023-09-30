@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Lau Gar | Social Media</title>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        $(function(){
+          $("#header").load("header.html"); 
+          $("#footer").load("footer.html"); 
+        });
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="insta__container">
+        <button class="btn left-btn"></button>
+        <button class="btn right-btn"></button>
+        <div class="carousel__container">
+            <ul class="carousel">
+                <li class="slide">
+                    <div class="story-status">
+                        <img src="story.jpg" class="story">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="instafeed"></div>
+    <div id="footer"></div>
+
+	<script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
+	<script type="text/javascript">
+	var userFeed = new Instafeed({
+		get: 'user',
+		target: "instafeed",
+    	resolution: 'high_resolution',
+		accessToken: 'IGQVJVVWRWRWJTTEg1RXRGOGMyVDRfTkVYcTJXb2FTYnM3cTFpNTFsRmF2eVFscUZA3MGZAiMEtPdlhUNE5kcmNPa2xSQkd4ZAW1DRWVSTXJtR3IyYkJlS25WblNNbl9SVjgwaHU0ajVWeXJJMnVSWkVOLQZDZDE'
+	});
+	userFeed.run();
+	</script>
+    
+    <script type="text/javascript" src="path/to/instafeed.min.js"></script>
+    
+</body>
+</html>
