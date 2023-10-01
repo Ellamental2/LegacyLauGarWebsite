@@ -758,8 +758,6 @@ body{
 }
 
 .BFKA__Container{
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
@@ -813,7 +811,6 @@ body{
     margin-top: 2rem;
     z-index: 1;
     width: 100%;
-    max-width: 1300px;
     padding: 0 50px;
 }
 
@@ -941,6 +938,18 @@ body{
         display: block;
         width: 85%;
         height: 300px;
+    }
+
+    .team__card h2{
+        font-size: 2rem;
+    }
+
+    #Gary:hover p{
+        font-size: 1.2rem;
+    }
+
+    #Steve:hover p{
+        font-size: 1.2rem;
     }
 
 }
