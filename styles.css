@@ -715,3 +715,237 @@ body{
 #form__btn:hover:after{
     width: 100%
 }
+
+.aboutLau{
+    /* margin-top: 80px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 180px auto;
+    background-color: #141414;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.aboutLau h1{
+    font-size: 3rem;
+    color: gold;
+    background-image: linear-gradient(to top, #ffd700 0%, #c0c0c0 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+
+}
+.aboutLau p{
+    font-size: 2rem;
+    color: white;
+}
+
+.aboutLau h2{
+    color: gold;
+    font-size: 2.2rem;
+    background-image: linear-gradient(to top, #ffd700 0%, #c0c0c0 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.BFKA__Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    max-width: 100%;
+    max-height: 100%;
+    height:auto;
+}
+
+#BFKALogo{
+    width: 75%;
+    max-width: 80%;
+    height: auto;
+}
+
+.aboutLegacy{
+    /* margin-top: 80px; */
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: auto;
+    background-color: #141414;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.aboutLegacy h1{
+    font-size: 3rem;
+    color: red;
+    background-image: linear-gradient(to top, red 0%, silver 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.aboutLegacy p{
+    font-size: 2rem;
+    color: white;
+    margin-bottom:1rem;
+}
+
+.ourTeam {
+    background-color: #151515;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.ourTeam h1{
+    font-size: 3rem;
+    color: gold;
+    background-image: linear-gradient(to top, #ffd700 0%, #c0c0c0 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.team__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height:100%;
+    max-width: 1100px;
+}
+
+.team__card{
+    margin: 1rem;
+    height: 475px;
+    width: 360px;
+    border-radius: 4px;
+    background-size: cover;
+    position:relative;
+    color: black;
+    transition: background-image 0.8s ease-in-out, color 0.8s ease-in-out;
+}
+
+.team__card h2{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.team__card p{
+    color: transparent;
+}
+
+#Gary{
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(17,17,17, 0.6) 100%), url('images/Gary.webp');
+    background-size: cover;
+}
+
+#Gary:hover {
+    background-image: linear-gradient(to top, gold 0%, silver 100%);
+    color: black;
+}
+
+#Gary:hover p{
+    font-size: 1.5rem;
+    text-align:center;
+    margin: 30px 10px;
+    vertical-align: center;
+    color: black;
+}
+
+#Steve{
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(17,17,17, 0.6) 100%), url('images/Steve.webp');
+    background-size: cover;
+}
+
+#Steve:hover {
+    background-image: linear-gradient(to top, gold 0%, silver 100%);
+    color: black;
+}
+
+#Steve:hover p{
+    font-size: 1.5rem;
+    text-align:center;
+    margin: 30px 10px;
+    vertical-align: center;
+    color: black;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .aboutLau{
+        display: flex;
+        flex-direction: column;
+        width: 1vb;
+        margin: 100px auto;
+        align-content : center;
+    }
+
+    .aboutLau__content{
+        align-content: center;
+    }
+
+    .aboutLau__content h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .aboutLau__content p {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .aboutLau__content h2{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .aboutLegacy h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .aboutLegacy p{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .team__card{
+        display: block;
+        width: 85%;
+        height: 300px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    
+}
