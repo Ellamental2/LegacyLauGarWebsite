@@ -19,36 +19,12 @@
 </head>
 <body>
     <div id="header"></div>
-
-    <div class="insta__container">
-        <button class="btn left-btn"></button>
-        <button class="btn right-btn"></button>
-        <div class="carousel__container">
-            <ul class="carousel">
-                <li class="slide">
-                    <div class="story-status">
-                        <img src="story.jpg" class="story">
-                    </div>
-                </li>
-            </ul>
-        </div>
+    
+    <div class="feed">
+        <iframe class="instaFeed" src="https://widgets.sociablekit.com/instagram-feed/iframe/217532" frameborder="0" width="100%" height="1000"></iframe>
     </div>
-    
-    <div id="instafeed"></div>
+        
     <div id="footer"></div>
-
-	<script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
-	<script type="text/javascript">
-	var userFeed = new Instafeed({
-		get: 'user',
-		target: "instafeed",
-    	resolution: 'high_resolution',
-		accessToken: 'IGQVJVVWRWRWJTTEg1RXRGOGMyVDRfTkVYcTJXb2FTYnM3cTFpNTFsRmF2eVFscUZA3MGZAiMEtPdlhUNE5kcmNPa2xSQkd4ZAW1DRWVSTXJtR3IyYkJlS25WblNNbl9SVjgwaHU0ajVWeXJJMnVSWkVOLQZDZDE'
-	});
-	userFeed.run();
-	</script>
-    
-    <script type="text/javascript" src="path/to/instafeed.min.js"></script>
     
 </body>
 </html>
