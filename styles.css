@@ -909,6 +909,98 @@ body{
     color: black;
 }
 
+.contactNumbers {
+    background-color: #151515;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    z-index: 1;
+    width: 100%;
+    padding: 0 50px;
+}
+
+.contactNumbers h1{
+    font-size: 3rem;
+    color: gold;
+    background-image: linear-gradient(to top, #ffd700 0%, #c0c0c0 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.contactNumbers p{
+    font-size: 2rem;
+    color: white;
+    margin-bottom:1rem;
+}
+
+.safeguarding
+{
+    background-color: #3d3d3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    z-index: 1;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+}
+
+.sg__btn {
+    font-size: 1rem;
+    font-weight: bolder;
+    background-image: linear-gradient(to top, gold 0%, silver 100%);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s ease;
+    outline: none;
+}
+
+.sg__btn a{
+    position: relative;
+    z-index: 2;
+    color: black;
+    text-decoration:none;
+    background-color: transparent;
+}
+
+.sg__btn:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: red;
+    transition: all 0.35s;
+    border-radius: 4px;
+}
+
+.sg__btn:hover {
+    color: black;
+}
+
+.sg__btn:hover:after{
+    width: 100%
+}   
+
+.tick{
+    width:120px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
 
 @media screen and (max-width: 768px) {
 
