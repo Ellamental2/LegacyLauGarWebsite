@@ -660,6 +660,57 @@ body{
     }
 }
 
+.contact__container {
+    display: grid;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: #141414;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.contact__container h1 {
+    font-size: 4rem;
+    color: gold;
+    background-image: linear-gradient(to top, #ffd700 0%, #c0c0c0 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.contact__container h2 {
+    font-size: 3rem;
+    color: red;
+    background-image: linear-gradient(to top, red 0%, silver 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.contact__container h3{
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight:700;
+    color: silver;
+}
+
+.contact__container p{
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight:700;
+    color: silver;
+    display: flex;
+    justify-content: space-between;
+}
+
 .contact__form--container{
     display: flex;
     padding-left: 24px;
@@ -683,9 +734,19 @@ body{
     width: 100%;
 }
 
-#form__message{
+#form__name,
+#form__email,
+#form__subject,
+#form__message {
+    background-color: #3d3d3d;
+    color: silver;
     width:100%;
     height: 100%;
+    vertical-align: top;
+}
+
+#form__message{
+    min-height: 10rem;
 }
 
 #form__btn {
@@ -729,6 +790,25 @@ body{
 
 #form__btn:hover:after{
     width: 100%
+}
+
+@media screen and (max-width:780px){
+    .contact__container{
+        display: grid;
+        align-content: center;
+    }
+
+    .contact__container h1{
+        font-size: 2rem;
+    }
+
+    .contact__container h2{
+        font-size: 1.5rem;
+    }
+
+    .contact__container h3{
+        font-size: 1rem;
+    }
 }
 
 .aboutLau{
