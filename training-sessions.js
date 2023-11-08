@@ -15,7 +15,7 @@ const trainingPlan = {
 // Define special weeks
 const specialWeeks = {
     "14/11/2023": "No Session this week",
-    "12/12/2023": "Closed for Christmas",
+    "12/12/2023": "TBC",
     "19/12/2023": "Closed for Christmas",
     "26/12/2023": "Closed for Christmas",
     // Add more special dates if needed.
