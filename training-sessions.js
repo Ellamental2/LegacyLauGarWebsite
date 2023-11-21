@@ -34,6 +34,7 @@ const seedWeek = 6; // Define the starting week number here
 function calculateTrainingSessions(seedDate, seedWeek, count) {
     const nextTuesdays = [];
     const currentDate = new Date();
+    currentDate.setHours(0,0,0,0);
     let sessionWeek = seedWeek;
     let sessionDate = new Date(seedDate);
 
