@@ -14,10 +14,11 @@ const trainingPlan = {
 
 // Define special weeks
 const specialWeeks = {
-    "14/11/2023": "No Session this week",
-    "12/12/2023": "TBC",
+    "05/12/2023": "Open Session - Swords and Sticks",
+    "12/12/2023": "Open Session - Swords and Sticks",
     "19/12/2023": "Closed for Christmas",
     "26/12/2023": "Closed for Christmas",
+    "02/01/2024": "Closed for Christmas",
     // Add more special dates if needed.
 };
 
@@ -27,8 +28,8 @@ const otherEvents = [
 ];
 
 // Define the seed date and starting week number
-const seedDate = "11/07/2023"; // Define your seed date here american date format mm/dd/yyyy
-const seedWeek = 6; // Define the starting week number here
+const seedDate = "09/01/2024"; // Define your seed date here american date format mm/dd/yyyy
+const seedWeek = 1; // Define the starting week number here
 
 // Function to calculate the next N Tuesdays based on the current date
 function calculateTrainingSessions(seedDate, seedWeek, count) {
