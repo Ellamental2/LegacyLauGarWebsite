@@ -14,22 +14,30 @@ const trainingPlan = {
 
 // Define special weeks
 const specialWeeks = {
-    "05/12/2023": "Open Session - Swords and Sticks",
-    "12/12/2023": "Open Session - Swords and Sticks",
-    "19/12/2023": "Closed for Christmas",
-    "26/12/2023": "Closed for Christmas",
-    "02/01/2024": "Closed for Christmas",
+    //"05/12/2023": "Open Session - Swords and Sticks",    
     // Add more special dates if needed.
 };
 
-const otherEvents = [
-    { date: new Date("11/26/2023"), description:"Instructor Course, Holy Trinity Academy, Telford. 11am-3pm (See BKFA website for details)"},
-    { date: new Date("11/23/2023"), description:"Birmingham LGKF Open Session (Ask instructor for details)"},
+const otherEvents = [ //american date format mm/dd/yyyy
+    { date: new Date("01/28/2024"), description:"Brown Sash Course 1, Holy Trinity Academy, Telford. 11am-3pm"},
+    { date: new Date("02/11/2024"), description:"Brown Sash Course 2, Holy Trinity Academy, Telford, 11am-3pm"},
+    { date: new Date("02/25/2024"), description: "Lau Gar in depth with Grandmaster Yau. Open to all BKFA students and Instructors. Please contact Pete Hornby to book your place. Email: pete_hornby@hotmail.com" },
+    { date: new Date("03/03/2024"), description: "First Aid, Holy Trinity Academy, Telford. 10am-5pm"},
+    { date: new Date("04/14/2024"), description: "Coaching Course 1, On-line Zoom Class, 9am-1pm"},
+    { date: new Date("04/19/2024"), description: "Lau Family Training Weekend, Shropshire. Starts Friday 7pm, ends Sunday 5pm. For bookings and more information contact pete_hornby@hotmail.com. *A few twin rooms are available.  Early booking recommended."},
+    { date: new Date("05/16/2024"), description: "Black Sash Grading, Holy Trinity Academy, Telford. From 10am"},
+    { date: new Date("07/14/2024"), description: "Brown Sash Course 1, Holy Trinity Academy, Telford. 11am-3pm"},
+    { date: new Date("07/28/2024"), description: "BFKA Summer Course, Llandudno. Starts Friday 28th July 10am, ends Saturday 3rd August 1pm. Please contact Pete Hornby to book your place Email: pete_hornby@hotmail.com"},
+    { date: new Date("09/08/2024"), description: "Brown Sash Course 2, Holy Trinity Academy, Telford. 11am-3pm"},
+    { date: new Date("09/22/2024"), description: "Weapons Workshop, Holy Trinity Academy, Telford. 11am-3pm. Ask Instructors for more details."},
+    { date: new Date("10/06/2024"), description: "Coaching Course 2, On-line Zoom Class, 9am-1pm"},
+    { date: new Date("10/20/2024"), description: "Black Sash Grading, Holy Trinity Academy, Telford. From 10am"},
+    { date: new Date("11/24/2024"), description: "Instructor's Course, Holy Trinity Academy, Telford. 11am-5pm"},
 ];
 
 // Define the seed date and starting week number
-const seedDate = "09/01/2024"; // Define your seed date here american date format mm/dd/yyyy
-const seedWeek = 1; // Define the starting week number here
+const seedDate = "01/23/2024"; // Define your seed date here american date format mm/dd/yyyy
+const seedWeek = 9; // Define the starting week number here
 
 // Function to calculate the next N Tuesdays based on the current date
 function calculateTrainingSessions(seedDate, seedWeek, count) {
@@ -111,8 +119,10 @@ window.addEventListener('load', () => {
     const eventTable = document.createElement('table');
     eventTable.classList.add('sessions-table');
     otherEvents.sort((a,b) => a.date - b.date);
+    let eventCount = 0;
 
     otherEvents.forEach((event) => {
+        if (eventCount > 5) return; //only show the next 5 events    
         if (event.date < new Date()) return;
         const row = eventTable.insertRow();
         const dateCell = row.insertCell(0);
@@ -120,6 +130,8 @@ window.addEventListener('load', () => {
 
         dateCell.textContent = event.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
         eventCell.textContent = event.description;
+
+        eventCount++;
     });
 
     eventsContainer.appendChild(eventTable);
