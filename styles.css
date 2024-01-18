@@ -1227,6 +1227,23 @@ body{
     -moz-text-fill-color: transparent;
 }
 
+.otherEventsContainer p{
+    font-size: 1rem;
+    color: silver;
+}
+
+.otherEventsContainer a{
+    text-decoration: none;
+    color: gold;
+}
+
+.sessions-table td {
+    font-size: 1.5rem;
+    color: white;      
+    padding: 8px;
+    text-align: left;
+}
+
 @media screen and (max-width: 768px) {
     .otherEventsContainer h1{
         font-size: 2rem;
