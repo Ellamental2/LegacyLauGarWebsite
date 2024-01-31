@@ -221,6 +221,46 @@ body{
     background-color: #141414;
 }
 
+.popup{
+    width: 400px;
+    background: gold;
+    border-radius: 6px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    align-items: center;
+    justify-self: center;
+    padding: 0 30px 30px;
+    color: black;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    position:absolute;
+}
+.popup__open{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+.popup__btn {
+    font-size: 1rem;
+    font-weight: bolder;
+    background-image: linear-gradient(to top, red 0%, silver 100%);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s ease;
+    outline: none;
+}
 .main{
     padding-top: 80px;
 }
