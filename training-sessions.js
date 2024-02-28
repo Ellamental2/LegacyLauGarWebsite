@@ -6,7 +6,7 @@ const trainingPlan = {
     4: "Kicks/Punches and Sets",
     5: "Conditioning and Sparring",
     6: "Hand Blocks and Kick Blocks",
-    7: "Sets",
+    7: "Sets and Applications",
     8: "Walks, Knife and Stick Defense",
     9: "Kicks/Punches and Sparring",
     0: "Open Lesson",
@@ -36,12 +36,12 @@ const otherEvents = [ //american date format mm/dd/yyyy
 ];
 
 // Define the seed date and starting week number
-const seedDate = "01/23/2024"; // Define your seed date here american date format mm/dd/yyyy
-const seedWeek = 9; // Define the starting week number here
+const seedDate = "03/04/2024"; // Define your seed date here american date format mm/dd/yyyy
+const seedWeek = 5; // Define the starting week number here
 
 // Function to calculate the next N Tuesdays based on the current date
 function calculateTrainingSessions(seedDate, seedWeek, count) {
-    const nextTuesdays = [];
+    const nextMondays = [];
     const currentDate = new Date();
     currentDate.setHours(0,0,0,0);
     let sessionWeek = seedWeek;
@@ -49,14 +49,14 @@ function calculateTrainingSessions(seedDate, seedWeek, count) {
 
     const timeDifference = currentDate.getTime() - sessionDate.getTime();
 
-    //calculate numbe rof weeks difference (-1 just incase today is wednesday)
+    //calculate number of weeks difference (-1 just incase today is tuesday)
     const weekDifference = Math.floor(timeDifference / (1000 * 3600 * 24 * 7)) -1;
     sessionWeek = (sessionWeek + weekDifference) % 10;
     sessionDate.setDate(sessionDate.getDate() + (weekDifference * 7));
 
-    while (nextTuesdays.length < count) {
+    while (nextMondays.length < count) {
         //find if the sessiondate is a special week
-        if (sessionDate.getDay() !== 2) //check that it is getting a tuesday if not move to the next loop
+        if (sessionDate.getDay() !== 1) //check that it is getting a monday if not move to the next loop
         {
             sessionDate.setDate(sessionDate.getDate() + 1);
             continue;
@@ -76,19 +76,19 @@ function calculateTrainingSessions(seedDate, seedWeek, count) {
         //check for special weeks
         if (specialWeeks[dateString])
         {
-            nextTuesdays.push({ date: new Date(sessionDate), session: specialWeeks[dateString]});
+            nextMondays.push({ date: new Date(sessionDate), session: specialWeeks[dateString]});
             sessionDate.setDate(sessionDate.getDate() + 7); //increment session date
         }
         else
         {
-            nextTuesdays.push({ date: new Date(sessionDate), session: trainingPlan[sessionWeek]});
+            nextMondays.push({ date: new Date(sessionDate), session: trainingPlan[sessionWeek]});
             //increment sessionweek and sessionDate
             sessionDate.setDate(sessionDate.getDate() + 7);
             sessionWeek = (sessionWeek + 1) % 10;
         }
     }
 
-    return nextTuesdays;
+    return nextMondays;
 }
 
 

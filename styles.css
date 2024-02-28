@@ -382,6 +382,51 @@ body{
         margin: 2.5rem 0;
     }
 }
+.contact__map--container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    background-color: #141414;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 20px 50px;
+}
+
+.contact__map--container h1{
+    font-size: 4rem;
+    color: gold;
+    background-image: linear-gradient(to top, #ffd700 0%, #c0c0c0 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+.contact__map--container h2{
+    font-size: 3rem;
+    color: red;
+    background-image: linear-gradient(to top, red 0%, silver 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+@media screen and (max-width: 480px) {
+    .contact__map--container h1{
+        font-size: 2rem;
+        margin-top: 1rem;
+        color: gold;
+    }
+    .contact__map--container h2{
+        font-size: 1.5rem;
+        color: red;
+    }
+}
+
 
 /* Instagram feed Section */
 
@@ -391,7 +436,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .benefit a {
