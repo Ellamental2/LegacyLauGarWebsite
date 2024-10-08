@@ -19,20 +19,24 @@ const specialWeeks = {
 };
 
 const otherEvents = [ //american date format mm/dd/yyyy
-    { date: new Date("01/28/2024"), description:"Brown Sash Course 1, Holy Trinity Academy, Telford. 11am-3pm"},
-    { date: new Date("02/11/2024"), description:"Brown Sash Course 2, Holy Trinity Academy, Telford, 11am-3pm"},
-    { date: new Date("02/25/2024"), description: "Lau Gar in depth with Grandmaster Yau. Open to all BKFA students and Instructors. Please contact Pete Hornby to book your place. Email: pete_hornby@hotmail.com" },
-    { date: new Date("03/03/2024"), description: "First Aid, Holy Trinity Academy, Telford. 10am-5pm"},
-    { date: new Date("04/14/2024"), description: "Coaching Course 1, On-line Zoom Class, 9am-1pm"},
-    { date: new Date("04/19/2024"), description: "Lau Family Training Weekend, Shropshire. Starts Friday 7pm, ends Sunday 5pm. For bookings and more information contact pete_hornby@hotmail.com. *A few twin rooms are available.  Early booking recommended."},
-    { date: new Date("05/16/2024"), description: "Black Sash Grading, Holy Trinity Academy, Telford. From 10am"},
-    { date: new Date("07/14/2024"), description: "Brown Sash Course 1, Holy Trinity Academy, Telford. 11am-3pm"},
-    { date: new Date("07/28/2024"), description: "BFKA Summer Course, Llandudno. Starts Friday 28th July 10am, ends Saturday 3rd August 1pm. Please contact Pete Hornby to book your place Email: pete_hornby@hotmail.com"},
-    { date: new Date("09/08/2024"), description: "Brown Sash Course 2, Holy Trinity Academy, Telford. 11am-3pm"},
-    { date: new Date("09/22/2024"), description: "Weapons Workshop, Holy Trinity Academy, Telford. 11am-3pm. Ask Instructors for more details."},
-    { date: new Date("10/06/2024"), description: "Coaching Course 2, On-line Zoom Class, 9am-1pm"},
-    { date: new Date("10/20/2024"), description: "Black Sash Grading, Holy Trinity Academy, Telford. From 10am"},
-    { date: new Date("11/24/2024"), description: "Instructor's Course, Holy Trinity Academy, Telford. 11am-5pm"},
+    { date: new Date("10/20/2024"), description: "Black Sash Grading, Holy Trinity Academy, Telford. From 10am" , endDate: null},
+    { date: new Date("11/24/2024"), description: "Instructor's Course, Holy Trinity Academy, Telford. 11am - 5pm" , endDate: null},
+    { date: new Date("01/12/2025"), description: "Anatomy & Physiology (Online). 9am - 1pm" , endDate: null},
+    { date: new Date("01/26/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
+    { date: new Date("02/23/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
+    { date: new Date("09/03/2025"), description: "First Aid (with 3 year qualifiaction) 10am - 5pm" , endDate: null},
+    { date: new Date("23/03/2025"), description: "1st Coaching Course (Online) 9am - 1pm" , endDate: null},
+    { date: new Date("04/04/2025"), description: "Lau Family Training Weekend Lillishall", endDate: new Date("04/05/2025") },
+    { date: new Date("10/05/2025"), description: "May 10th - 11th, Ireland", endDate: new Date("11/05/2025") },
+    { date: new Date("11/05/2025"), description: "Referee Course (Northampton). 11am - 3pm" , endDate: null},
+    { date: new Date("18/05/2025"), description: "Black Sash Grading (all grades). From 10am" , endDate: null},
+    { date: new Date("20/07/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
+    { date: new Date("27/07/2025"), description: "Summer Course Llandudno (50th Year Celebration)", endDate: new Date("02/08/2025") },
+    { date: new Date("07/09/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
+    { date: new Date("21/09/2025"), description: "Weapons Workshop. 10am - 4pm" , endDate: null},
+    { date: new Date("05/10/2025"), description: "2nd Coaching Course (Online) 9am - 1pm" , endDate: null},
+    { date: new Date("19/10/2025"), description: "Black Sash Grading (all grades). From 10am" , endDate: null},
+    { date: new Date("23/11/2025"), description: "Instructor's Workshop. 11am - 3pm" , endDate: null},
 ];
 
 // Define the seed date and starting week number
@@ -128,7 +132,7 @@ window.addEventListener('load', () => {
         const dateCell = row.insertCell(0);
         const eventCell = row.insertCell(1);
 
-        dateCell.textContent = event.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        dateCell.textContent = event.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) + event.endDate != null ? " - " + event.endDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : "";
         eventCell.textContent = event.description;
 
         eventCount++;
