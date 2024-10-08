@@ -132,7 +132,11 @@ window.addEventListener('load', () => {
         const dateCell = row.insertCell(0);
         const eventCell = row.insertCell(1);
 
-        dateCell.textContent = event.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) + event.endDate != null ? " - " + event.endDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : "";
+        dateCell.textContent = event.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        
+        if(event.endDate != null)
+            dateCell.textContent = dateCell.textContent.concat(" - ", event.endDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }));
+        
         eventCell.textContent = event.description;
 
         eventCount++;
