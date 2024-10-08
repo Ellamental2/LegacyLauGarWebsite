@@ -126,7 +126,7 @@ window.addEventListener('load', () => {
     let eventCount = 0;
 
     otherEvents.forEach((event) => {
-        if (eventCount > 5) return; //only show the next 5 events    
+        if (eventCount >= 5) return; //only show the next 5 events    
         if (event.date < new Date()) return;
         const row = eventTable.insertRow();
         const dateCell = row.insertCell(0);
