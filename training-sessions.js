@@ -14,12 +14,15 @@ const trainingPlan = {
 
 // Define special weeks
 const specialWeeks = {
-    //"05/12/2023": "Open Session - Swords and Sticks",    
+    //"05/12/2023": "Open Session - Swords and Sticks",
     // Add more special dates if needed.
+    "09/12/2024": "Open Lesson",
+    "16/12/2024": "Christmas Break (No Training)",
+    "23/12/2024": "Christmas Break (No Training)",
+    "30/12/2024": "Christmas Break (No Training)",
 };
 
 const otherEvents = [ //american date format mm/dd/yyyy
-    { date: new Date("10/20/2024"), description: "Black Sash Grading, Holy Trinity Academy, Telford. From 10am" , endDate: null},
     { date: new Date("11/24/2024"), description: "Instructor's Course, Holy Trinity Academy, Telford. 11am - 5pm" , endDate: null},
     { date: new Date("01/12/2025"), description: "Anatomy & Physiology (Online). 9am - 1pm" , endDate: null},
     { date: new Date("01/26/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
@@ -27,11 +30,11 @@ const otherEvents = [ //american date format mm/dd/yyyy
     { date: new Date("03/09/2025"), description: "First Aid (with 3 year qualifiaction) 10am - 5pm" , endDate: null},
     { date: new Date("03/23/2025"), description: "1st Coaching Course (Online) 9am - 1pm" , endDate: null},
     { date: new Date("04/04/2025"), description: "Lau Family Training Weekend Lillishall", endDate: new Date("04/05/2025") },
-    { date: new Date("10/05/2025"), description: "Ireland", endDate: new Date("05/11/2025") },
+    { date: new Date("10/05/2025"), description: "May 10th - 11th, Ireland", endDate: new Date("11/05/2025") },
     { date: new Date("11/05/2025"), description: "Referee Course (Northampton). 11am - 3pm" , endDate: null},
     { date: new Date("18/05/2025"), description: "Black Sash Grading (all grades). From 10am" , endDate: null},
     { date: new Date("20/07/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
-    { date: new Date("27/07/2025"), description: "Summer Course Llandudno (50th Year Celebration)", endDate: new Date("08/02/2025") },
+    { date: new Date("27/07/2025"), description: "Summer Course Llandudno (50th Year Celebration)", endDate: new Date("02/08/2025") },
     { date: new Date("07/09/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
     { date: new Date("21/09/2025"), description: "Weapons Workshop. 10am - 4pm" , endDate: null},
     { date: new Date("05/10/2025"), description: "2nd Coaching Course (Online) 9am - 1pm" , endDate: null},
@@ -95,8 +98,6 @@ function calculateTrainingSessions(seedDate, seedWeek, count) {
     return nextMondays;
 }
 
-
-
 // Call the function to calculate and update the training sessions when the page loads
 window.addEventListener('load', () => {
     const sessionsContainer = document.querySelector(".sessionsContainer");
@@ -133,10 +134,6 @@ window.addEventListener('load', () => {
         const eventCell = row.insertCell(1);
 
         dateCell.textContent = event.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-        
-        if(event.endDate != null)
-            dateCell.textContent = dateCell.textContent.concat(" - ", event.endDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }));
-        
         eventCell.textContent = event.description;
 
         eventCount++;
