@@ -16,6 +16,7 @@ const trainingPlan = {
 const specialWeeks = {
     //"05/12/2023": "Open Session - Swords and Sticks",
     // Add more special dates if needed.
+    "09/12/2024": "Open Lesson",
     "16/12/2024": "Christmas Break (No Training)",
     "23/12/2024": "Christmas Break (No Training)",
     "30/12/2024": "Christmas Break (No Training)",
@@ -26,8 +27,8 @@ const otherEvents = [ //american date format mm/dd/yyyy
     { date: new Date("01/12/2025"), description: "Anatomy & Physiology (Online). 9am - 1pm" , endDate: null},
     { date: new Date("01/26/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
     { date: new Date("02/23/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
-    { date: new Date("09/03/2025"), description: "First Aid (with 3 year qualifiaction) 10am - 5pm" , endDate: null},
-    { date: new Date("23/03/2025"), description: "1st Coaching Course (Online) 9am - 1pm" , endDate: null},
+    { date: new Date("03/09/2025"), description: "First Aid (with 3 year qualifiaction) 10am - 5pm" , endDate: null},
+    { date: new Date("03/23/2025"), description: "1st Coaching Course (Online) 9am - 1pm" , endDate: null},
     { date: new Date("04/04/2025"), description: "Lau Family Training Weekend Lillishall", endDate: new Date("04/05/2025") },
     { date: new Date("10/05/2025"), description: "May 10th - 11th, Ireland", endDate: new Date("11/05/2025") },
     { date: new Date("11/05/2025"), description: "Referee Course (Northampton). 11am - 3pm" , endDate: null},
@@ -128,13 +129,14 @@ window.addEventListener('load', () => {
     let eventCount = 0;
 
     otherEvents.forEach((event) => {
-        if (eventCount > 5) return; //only show the next 5 events    
+        if (eventCount >= 5) return; //only show the next 5 events    
         if (event.date < new Date()) return;
         const row = eventTable.insertRow();
         const dateCell = row.insertCell(0);
         const eventCell = row.insertCell(1);
 
-        dateCell.textContent = event.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) + event.endDate != null ? " - " + event.endDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : "";
+        dateCell.textContent = event.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+        if (event.endDate != null) dateCell.textContent += " - " + event.endDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
         eventCell.textContent = event.description;
 
         eventCount++;
