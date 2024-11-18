@@ -16,9 +16,9 @@ const trainingPlan = {
 const specialWeeks = {
     //"05/12/2023": "Open Session - Swords and Sticks",
     // Add more special dates if needed.
-    "12/16/2024": "Christmas Break (No Training)",
-    "12/23/2024": "Christmas Break (No Training)",
-    "12/30/2024": "Christmas Break (No Training)",
+    "16/12/2024": "Christmas Break (No Training)",
+    "23/12/2024": "Christmas Break (No Training)",
+    "30/12/2024": "Christmas Break (No Training)",
 };
 
 const otherEvents = [ //american date format mm/dd/yyyy
