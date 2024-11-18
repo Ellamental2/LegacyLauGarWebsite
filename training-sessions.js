@@ -98,8 +98,6 @@ function calculateTrainingSessions(seedDate, seedWeek, count) {
     return nextMondays;
 }
 
-
-
 // Call the function to calculate and update the training sessions when the page loads
 window.addEventListener('load', () => {
     const sessionsContainer = document.querySelector(".sessionsContainer");
