@@ -14,12 +14,14 @@ const trainingPlan = {
 
 // Define special weeks
 const specialWeeks = {
-    //"05/12/2023": "Open Session - Swords and Sticks",    
+    //"05/12/2023": "Open Session - Swords and Sticks",
     // Add more special dates if needed.
+    "12/16/2025": "Christmas Break (No Training)",
+    "12/23/2025": "Christmas Break (No Training)",
+    "12/30/2025": "Christmas Break (No Training)",
 };
 
 const otherEvents = [ //american date format mm/dd/yyyy
-    { date: new Date("10/20/2024"), description: "Black Sash Grading, Holy Trinity Academy, Telford. From 10am" , endDate: null},
     { date: new Date("11/24/2024"), description: "Instructor's Course, Holy Trinity Academy, Telford. 11am - 5pm" , endDate: null},
     { date: new Date("01/12/2025"), description: "Anatomy & Physiology (Online). 9am - 1pm" , endDate: null},
     { date: new Date("01/26/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
