@@ -16,14 +16,10 @@ const trainingPlan = {
 const specialWeeks = {
     //"05/12/2023": "Open Session - Swords and Sticks",
     // Add more special dates if needed.
-    "09/12/2024": "Open Lesson",
-    "16/12/2024": "Christmas Break (No Training)",
-    "23/12/2024": "Christmas Break (No Training)",
-    "30/12/2024": "Christmas Break (No Training)",
+    
 };
 
 const otherEvents = [ //american date format mm/dd/yyyy
-    { date: new Date("11/24/2024"), description: "Instructor's Course, Holy Trinity Academy, Telford. 11am - 5pm" , endDate: null},
     { date: new Date("01/12/2025"), description: "Anatomy & Physiology (Online). 9am - 1pm" , endDate: null},
     { date: new Date("01/26/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
     { date: new Date("02/23/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
@@ -43,8 +39,8 @@ const otherEvents = [ //american date format mm/dd/yyyy
 ];
 
 // Define the seed date and starting week number
-const seedDate = "03/04/2024"; // Define your seed date here american date format mm/dd/yyyy
-const seedWeek = 5; // Define the starting week number here
+const seedDate = "13/01/2025"; // Define your seed date here american date format mm/dd/yyyy
+const seedWeek = 1; // Define the starting week number here
 
 // Function to calculate the next N Tuesdays based on the current date
 function calculateTrainingSessions(seedDate, seedWeek, count) {
