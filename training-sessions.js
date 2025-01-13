@@ -39,7 +39,7 @@ const otherEvents = [ //american date format mm/dd/yyyy
 ];
 
 // Define the seed date and starting week number
-const seedDate = "13/01/2025"; // Define your seed date here american date format mm/dd/yyyy
+const seedDate = "01/13/2025"; // Define your seed date here american date format mm/dd/yyyy
 const seedWeek = 1; // Define the starting week number here
 
 // Function to calculate the next N Tuesdays based on the current date
