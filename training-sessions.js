@@ -30,7 +30,7 @@ const otherEvents = [ //american date format mm/dd/yyyy
     { date: new Date("05/11/2025"), description: "Referee Course (Northampton). 11am - 3pm" , endDate: null},
     { date: new Date("05/18/2025"), description: "Black Sash Grading (all grades). From 10am" , endDate: null},
     { date: new Date("07/20/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
-    { date: new Date("07/27/2025"), description: "Summer Course Llandudno (50th Year Celebration)", endDate: new Date("02/08/2025") },
+    { date: new Date("07/27/2025"), description: "Summer Course Llandudno (50th Year Celebration)", endDate: new Date("08/02/2025") },
     { date: new Date("09/07/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
     { date: new Date("09/21/2025"), description: "Weapons Workshop. 10am - 4pm" , endDate: null},
     { date: new Date("05/10/2025"), description: "2nd Coaching Course (Online) 9am - 1pm" , endDate: null},
