@@ -32,7 +32,7 @@ const otherEvents = [ //american date format mm/dd/yyyy
     { date: new Date("07/20/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
     { date: new Date("07/27/2025"), description: "Summer Course Llandudno (50th Year Celebration)", endDate: new Date("08/02/2025") },
     { date: new Date("09/07/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
-    { date: new Date("21/09/2025"), description: "Weapons Workshop. 10am - 4pm" , endDate: null},
+    { date: new Date("09/21/2025"), description: "Weapons Workshop. 10am - 4pm" , endDate: null},
     { date: new Date("10/05/2025"), description: "2nd Coaching Course (Online) 9am - 1pm" , endDate: null},
     { date: new Date("10/19/2025"), description: "Black Sash Grading (all grades). From 10am" , endDate: null},
     { date: new Date("11/23/2025"), description: "Instructor's Workshop. 11am - 3pm" , endDate: null},
