@@ -428,7 +428,470 @@ body{
 }
 
 
-/* Instagram feed Section */
+/* Social Links Page */
+.social-links-page {
+    background-color: #151515;
+    min-height: 100vh;
+    padding: 100px 0 50px;
+}
+
+.social-links-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.social-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: white;
+}
+
+.social-header h1 {
+    background: linear-gradient(to right, gold 0%, silver 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.social-header p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.social-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.social-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 15px;
+    padding: 2.5rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    padding: 2px;
+    background: linear-gradient(135deg, gold 0%, silver 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-card:hover::before {
+    opacity: 1;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.social-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.instagram-icon {
+    background: linear-gradient(45deg, #E1306C, #F77737, #FCAF45);
+    color: white;
+}
+
+.facebook-icon {
+    background: #1877F2;
+    color: white;
+}
+
+.social-card h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.social-card-content h3 {
+    color: gold;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.social-card-content p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.social-highlights {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.social-highlights li {
+    color: #e0e0e0;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.social-card-footer {
+    margin-top: 2rem;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.instagram-btn {
+    background: linear-gradient(45deg, #E1306C, #F77737, #FCAF45);
+    color: white;
+}
+
+.instagram-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+}
+
+.facebook-btn {
+    background: #1877F2;
+    color: white;
+}
+
+.facebook-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
+
+.social-footer {
+    text-align: center;
+    padding: 3rem 0;
+    border-top: 1px solid #333;
+}
+
+.contact-prompt h3 {
+    color: gold;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-prompt p {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-options {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 15px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.contact-btn.primary {
+    background: linear-gradient(45deg, gold, silver);
+    color: #333;
+}
+
+.contact-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.contact-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid gold;
+}
+
+.contact-btn.secondary:hover {
+    background: gold;
+    color: #333;
+}
+
+/* Responsive Design for Social Links Page */
+@media screen and (max-width: 768px) {
+    .social-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .social-header p {
+        font-size: 1rem;
+    }
+    
+    .social-cards {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .social-card {
+        padding: 2rem;
+    }
+    
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin-right: 1rem;
+    }
+    
+    .social-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .social-card-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .contact-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .social-links-page {
+        padding: 90px 0 30px;
+    }
+    
+    .social-links-container {
+        padding: 0 15px;
+    }
+    
+    .social-header h1 {
+        font-size: 2rem;
+    }
+    
+    .social-cards {
+        gap: 1.5rem;
+    }
+    
+    .social-card {
+        padding: 1.5rem;
+    }
+    
+    .social-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .social-icon {
+        margin-right: 0;
+    }
+    
+    .social-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .contact-prompt h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Old Instagram feed styles removed - now using static social links */
+
+/* Legal Pages Styles */
+.legal-page {
+    background-color: #151515;
+    min-height: 100vh;
+    padding: 100px 0 50px;
+}
+
+.legal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: white;
+}
+
+.legal-title {
+    background: linear-gradient(to right, gold 0%, silver 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.legal-content {
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.last-updated {
+    text-align: center;
+    color: #ccc;
+    font-style: italic;
+    margin-bottom: 3rem;
+    font-size: 0.9rem;
+}
+
+.legal-section {
+    margin-bottom: 3rem;
+}
+
+.legal-section h2 {
+    color: gold;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid gold;
+    padding-bottom: 0.5rem;
+}
+
+.legal-section h3 {
+    color: silver;
+    font-size: 1.4rem;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.legal-section p {
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+}
+
+.legal-section ul {
+    margin: 1rem 0 1rem 2rem;
+    color: #e0e0e0;
+}
+
+.legal-section li {
+    margin-bottom: 0.5rem;
+}
+
+.legal-section a {
+    color: gold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.legal-section a:hover {
+    color: silver;
+}
+
+/* Responsive design for legal pages */
+@media screen and (max-width: 768px) {
+    .legal-title {
+        font-size: 2.5rem;
+    }
+    
+    .legal-container {
+        padding: 0 15px;
+    }
+    
+    .legal-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .legal-section h3 {
+        font-size: 1.2rem;
+    }
+    
+    .legal-content {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .legal-title {
+        font-size: 2rem;
+    }
+    
+    .legal-page {
+        padding: 90px 0 30px;
+    }
+    
+    .legal-section ul {
+        margin-left: 1rem;
+    }
+}
+
+/* Responsive design for Instagram feed */
+@media screen and (max-width: 768px) {
+    .instagram-feed {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 1rem;
+    }
+    
+    .instagram-header h1 {
+        font-size: 2rem;
+    }
+    
+    .instagram-link {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .instagram-feed {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .instagram-post {
+        aspect-ratio: 1;
+    }
+}
 
 /* benefit Section */
 .benefit {
@@ -661,6 +1124,31 @@ body{
     width: 240px;
 }
 
+/* Footer Legal Links */
+.footer__legal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.legal__link {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.legal__link:hover {
+    color: gold;
+}
+
+.legal__separator {
+    color: #666;
+    margin: 0 1rem;
+    font-size: 0.9rem;
+}
+
 .social__logo {
     color: black;
     justify-self: flex-start;
@@ -693,6 +1181,14 @@ body{
     
     .social__media--wrap{
         flex-direction: column;
+    }
+    
+    .footer__legal {
+        margin-bottom: 1.5rem;
+    }
+    
+    .legal__separator {
+        margin: 0 0.5rem;
     }
 }
 
