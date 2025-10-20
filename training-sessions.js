@@ -14,33 +14,18 @@ const trainingPlan = {
 
 // Define special weeks
 const specialWeeks = {
-    //"05/12/2023": "Open Session - Swords and Sticks",
+    //"dd/MM/yyyy": "Open Session - Swords and Sticks",
     // Add more special dates if needed.
-    
+    "24/11/2025": "No Class"
 };
 
 const otherEvents = [ //american date format mm/dd/yyyy
-    { date: new Date("01/12/2025"), description: "Anatomy & Physiology (Online). 9am - 1pm" , endDate: null},
-    { date: new Date("01/26/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
-    { date: new Date("02/23/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
-    { date: new Date("03/09/2025"), description: "First Aid (with 3 year qualifiaction) 10am - 5pm" , endDate: null},
-    { date: new Date("03/23/2025"), description: "1st Coaching Course (Online) 9am - 1pm" , endDate: null},
-    { date: new Date("04/04/2025"), description: "Lau Family Training Weekend Lillishall", endDate: new Date("04/05/2025") },
-    { date: new Date("05/10/2025"), description: "May 10th - 11th, Ireland", endDate: new Date("11/05/2025") },
-    { date: new Date("05/11/2025"), description: "Referee Course (Northampton). 11am - 3pm" , endDate: null},
-    { date: new Date("05/18/2025"), description: "Black Sash Grading (all grades). From 10am" , endDate: null},
-    { date: new Date("07/20/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
-    { date: new Date("07/27/2025"), description: "Summer Course Llandudno (50th Year Celebration)", endDate: new Date("08/02/2025") },
-    { date: new Date("09/07/2025"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
-    { date: new Date("09/21/2025"), description: "Weapons Workshop. 10am - 4pm" , endDate: null},
-    { date: new Date("10/05/2025"), description: "2nd Coaching Course (Online) 9am - 1pm" , endDate: null},
-    { date: new Date("10/19/2025"), description: "Black Sash Grading (all grades). From 10am" , endDate: null},
     { date: new Date("11/23/2025"), description: "Instructor's Workshop. 11am - 3pm" , endDate: null},
 ];
 
 // Define the seed date and starting week number
-const seedDate = "03/17/2025"; // Define your seed date here american date format mm/dd/yyyy
-const seedWeek = 9; // Define the starting week number here
+const seedDate = "10/20/2025"; // Define your seed date here american date format mm/dd/yyyy
+const seedWeek = 1; // Define the starting week number here
 
 // Function to calculate the next N Tuesdays based on the current date
 function calculateTrainingSessions(seedDate, seedWeek, count) {
