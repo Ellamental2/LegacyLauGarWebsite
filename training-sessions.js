@@ -1,31 +1,40 @@
 // Define the training plan as a dictionary
 const trainingPlan = {
-    1: "Walks and Sets",
-    2: "Hand Blocks and Kick Blocks",
-    3: "Stick and Knife Defense",
-    4: "Kicks/Punches and Sets",
-    5: "Conditioning and Sparring",
-    6: "Hand Blocks and Kick Blocks",
-    7: "Sets and Applications",
-    8: "Walks, Knife and Stick Defense",
-    9: "Kicks/Punches and Sparring",
-    0: "Open Lesson",
+    0: "Walks and Sets",
+    1: "Hand Blocks and Kick Blocks",
+    2: "Stick and Knife Defense",
+    3: "Kicks/Punches and Sets",
+    4: "Conditioning and Sparring",
+    5: "Hand Blocks and Kick Blocks",
+    6: "Sets and Applications",
+    7: "Walks, Knife and Stick Defense",
+    8: "Kicks/Punches and Sparring",
+    9: "Open Lesson",
 };
 
 // Define special weeks
 const specialWeeks = {
     //"dd/MM/yyyy": "Open Session - Swords and Sticks",
     // Add more special dates if needed.
-    "17/11/2025": "No Class"
+    "08/12/2025": "Open Lesson",
+    "09/12/2025": "Christmas Meal",
+    "15/12/2025": "No Class - Holiday Break",
+    "22/12/2025": "No Class - Holiday Break",
+    "29/12/2025": "No Class - Holiday Break",
 };
 
-const otherEvents = [ //american date format mm/dd/yyyy
-    { date: new Date("11/23/2025"), description: "Instructor's Workshop. 11am - 3pm" , endDate: null},
+const otherEvents = [ //UK date format dd/MM/yyyy
+    { date: new Date("2026-01-18"), description: "Anatomy and Physiology. 9am - 1pm" , endDate: null},
+    { date: new Date("2026-01-26"), description: "Brown Sash Course 1. 11am - 3pm" , endDate: null},
+    { date: new Date("2026-02-26"), description: "Brown Sash Course 2. 11am - 3pm" , endDate: null},
+    { date: new Date("2026-03-08"), description: "First Aid. 10am - 5pm" , endDate: null},
+    { date: new Date("2026-03-26"), description: "Coaching 1. 9am - 1pm" , endDate: null},
+    { date: new Date("2026-04-26"), description: "Lau Family Training Weekend" , endDate: new Date("2026-04-28")},
 ];
 
 // Define the seed date and starting week number
-const seedDate = "10/20/2025"; // Define your seed date here american date format mm/dd/yyyy
-const seedWeek = 1; // Define the starting week number here
+const seedDate = "05/01/2026"; // UK format: DD/MM/YYYY
+const seedWeek = 0; // Define the starting week number here
 
 // Function to calculate the next N Tuesdays based on the current date
 function calculateTrainingSessions(seedDate, seedWeek, count) {
@@ -34,13 +43,16 @@ function calculateTrainingSessions(seedDate, seedWeek, count) {
     const currentDate = new Date();
     currentDate.setHours(0,0,0,0);
     let sessionWeek = seedWeek;
-    let sessionDate = new Date(seedDate);
+    // Parse UK format date (DD/MM/YYYY)
+    const [day, month, year] = seedDate.split('/');
+    let sessionDate = new Date(year, month - 1, day);
 
     const timeDifference = currentDate.getTime() - sessionDate.getTime();
 
     //calculate number of weeks difference (-1 just incase today is tuesday)
     const weekDifference = Math.floor(timeDifference / (1000 * 3600 * 24 * 7)) -1;
-    sessionWeek = (sessionWeek + weekDifference) % 10;
+    // Handle negative modulo properly for JavaScript
+    sessionWeek = ((seedWeek + weekDifference) % 10 + 10) % 10;
     sessionDate.setDate(sessionDate.getDate() + (weekDifference * 7));
 
     while (nextMondays.length < count) {
@@ -67,6 +79,7 @@ function calculateTrainingSessions(seedDate, seedWeek, count) {
         {
             nextMondays.push({ date: new Date(sessionDate), session: specialWeeks[dateString]});
             sessionDate.setDate(sessionDate.getDate() + 7); //increment session date
+            sessionWeek = (sessionWeek + 1) % 10; // Increment week counter to keep rotation aligned
         }
         else
         {
@@ -85,7 +98,7 @@ window.addEventListener('load', () => {
     const sessionsContainer = document.querySelector(".sessionsContainer");
     sessionsContainer.innerHTML = ''; // Clear the existing content
 
-    const nextSessions = calculateTrainingSessions(new Date(seedDate), seedWeek, 5);
+    const nextSessions = calculateTrainingSessions(seedDate, seedWeek, 5);
 
     const table = document.createElement('table');
     table.classList.add('sessions-table');
