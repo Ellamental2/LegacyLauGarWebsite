@@ -16,11 +16,7 @@ const trainingPlan = {
 const specialWeeks = {
     //"dd/MM/yyyy": "Open Session - Swords and Sticks",
     // Add more special dates if needed.
-    "08/12/2025": "Open Lesson",
-    "09/12/2025": "Christmas Meal",
-    "15/12/2025": "No Class - Holiday Break",
-    "22/12/2025": "No Class - Holiday Break",
-    "29/12/2025": "No Class - Holiday Break",
+    "02/02/2026": "No Class This Week",
 };
 
 const otherEvents = [ //UK date format dd/MM/yyyy
