@@ -16,16 +16,18 @@ const trainingPlan = {
 const specialWeeks = {
     //"dd/MM/yyyy": "Open Session - Swords and Sticks",
     // Add more special dates if needed.
-    "02/02/2026": "No Class This Week",
+    "13/07/2026": "Kicks/Punches and Sparring",
+    "20/07/2026": "Walks, Knife and Stick Defense"
 };
 
 const otherEvents = [ //UK date format dd/MM/yyyy
-    { date: new Date("2026-01-18"), description: "Anatomy and Physiology. 9am - 1pm" , endDate: null},
-    { date: new Date("2026-01-26"), description: "Brown Sash Course 1. 11am - 3pm" , endDate: null},
-    { date: new Date("2026-02-26"), description: "Brown Sash Course 2. 11am - 3pm" , endDate: null},
-    { date: new Date("2026-03-08"), description: "First Aid. 10am - 5pm" , endDate: null},
-    { date: new Date("2026-03-26"), description: "Coaching 1. 9am - 1pm" , endDate: null},
-    { date: new Date("2026-04-26"), description: "Lau Family Training Weekend" , endDate: new Date("2026-04-28")},
+    { date: new Date("2026-07-19"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
+    { date: new Date("2026-07-26"), description: "BKFA Summer Course" , endDate: new Date("2026-08-01")},
+    { date: new Date("2026-09-06"), description: "Brown Sash Course. 11am - 3pm" , endDate: null},
+    { date: new Date("2026-09-20"), description: "Weapons Workshop. 10am - 4pm" , endDate: null},
+    { date: new Date("2026-10-04"), description: "Coaching Level 2. 9am - 1pm" , endDate: null},
+    { date: new Date("2026-10-18"), description: "Black Sash Grading. 10am - 1pm" , endDate: null},
+    { date: new Date("2026-11-22"), description: "Instructors Course. 11am - 4pm" , endDate: null},
 ];
 
 // Define the seed date and starting week number
