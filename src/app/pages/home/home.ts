@@ -11,6 +11,8 @@ interface Benefit {
   title: string;
   copy: string;
   image: string;
+  /** CSS object-position for the card image (default: centre). */
+  position?: string;
 }
 
 @Component({
@@ -33,11 +35,13 @@ export class Home {
       title: 'Flexibility',
       copy: 'As you train we will help you work to increase your flexibility.',
       image: 'images/flexibleKick.webp',
+      position: '50% 12%',
     },
     {
       title: 'Balance',
       copy: 'As you practise you will naturally develop your balance.',
       image: 'images/balance.webp',
+      position: '50% 12%',
     },
     {
       title: 'Confidence',
