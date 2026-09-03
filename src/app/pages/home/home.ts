@@ -27,22 +27,22 @@ export class Home {
     {
       title: 'Strength',
       copy: 'Kung Fu is a great way to increase your strength and general fitness.',
-      image: 'images/strongStance.jpg',
+      image: 'images/strongStance.webp',
     },
     {
       title: 'Flexibility',
       copy: 'As you train we will help you work to increase your flexibility.',
-      image: 'images/flexibleKick.jpg',
+      image: 'images/flexibleKick.webp',
     },
     {
       title: 'Balance',
       copy: 'As you practise you will naturally develop your balance.',
-      image: 'images/balance.jpg',
+      image: 'images/balance.webp',
     },
     {
       title: 'Confidence',
       copy: 'As you learn you will gain confidence in your ability to defend yourself.',
-      image: 'images/confidence.jpg',
+      image: 'images/confidence.webp',
     },
   ];
 }

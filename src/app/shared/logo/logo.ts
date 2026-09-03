@@ -1,34 +1,45 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 /**
- * Club logo, rendered as an inline SVG so it can be recoloured with CSS.
+ * Club dragon logo.
  *
- * The template is `logo.svg`. To change the artwork, edit that file: keep the
- * root `<svg>` (with its Angular attribute bindings) and swap the `<path>`
- * elements for the club's dragon, using `fill="currentColor"`.
- *
- * Colour follows the `color` set on `<app-logo>` — gold by default; override
- * per context, e.g. `<app-logo style="color: var(--text-muted)">`.
+ * The artwork lives at `public/images/logo.svg` (a single-colour vector). It is
+ * applied as a CSS mask so the fill follows the `color` set on `<app-logo>`
+ * (gold by default) — recolour per context, e.g.
+ * `<app-logo style="color: var(--text-muted)">`. One file, any colour, any size.
  */
 @Component({
   selector: 'app-logo',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './logo.svg',
+  template: `
+    <span
+      class="logo__mark"
+      [style.width.px]="width()"
+      [style.height.px]="size()"
+      [attr.role]="decorative() ? null : 'img'"
+      [attr.aria-hidden]="decorative() ? 'true' : null"
+      [attr.aria-label]="decorative() ? null : 'Legacy Lau Gar logo'"
+    ></span>
+  `,
   styles: `
     :host {
       display: inline-flex;
       color: var(--gold);
-      line-height: 0;
     }
-    svg {
-      width: auto;
-      height: auto;
+    .logo__mark {
+      display: block;
+      background-color: currentColor;
+      -webkit-mask: url('/images/logo.svg') center / contain no-repeat;
+      mask: url('/images/logo.svg') center / contain no-repeat;
     }
   `,
 })
 export class Logo {
-  /** Rendered width/height in pixels (the mark is square). */
+  /** Rendered height in pixels. Width follows the artwork's aspect ratio. */
   readonly size = input(40);
-  /** True when adjacent text already names the club (hides it from a11y tree). */
+  /** True when adjacent text already names the club (hidden from a11y tree). */
   readonly decorative = input(false);
+
+  /** Artwork aspect ratio is 356 : 600 (see public/images/logo.svg viewBox). */
+  protected readonly width = computed(() => Math.round((this.size() * 356) / 600));
 }

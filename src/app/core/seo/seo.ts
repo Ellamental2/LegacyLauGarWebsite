@@ -14,7 +14,7 @@ export interface SeoData {
 const DEFAULT_DESCRIPTION =
   'Legacy Lau Gar is a Lau Gar Kung Fu club in Nuneaton, established for over 40 years. ' +
   'Beginners welcome — train self-defence, fitness and the art on Monday evenings.';
-const DEFAULT_IMAGE = '/images/dragonMain.webp';
+const DEFAULT_IMAGE = '/images/strongStance.webp';
 
 @Injectable({ providedIn: 'root' })
 export class SeoService {
