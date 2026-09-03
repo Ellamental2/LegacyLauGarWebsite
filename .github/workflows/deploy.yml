@@ -3,30 +3,50 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [master]
+  # Allow manual runs from the Actions tab.
   workflow_dispatch:
 
+# Needed by actions/deploy-pages.
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# One Pages deployment at a time; don't cancel an in-flight deploy.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 24 # Angular 22 requires >= 24.15
           cache: npm
-      - run: npm ci
-      - run: npm run build
-      - name: Verify CNAME made it into the build
-        run: test -f dist/legacy-lau-gar/browser/CNAME
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Unit tests
+        run: npm test -- --watch=false
+
+      - name: Build (static prerender)
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          out=dist/legacy-lau-gar/browser
+          test -f "$out/index.html"        || { echo "::error::missing index.html"; exit 1; }
+          test -f "$out/about/index.html"  || { echo "::error::routes not prerendered"; exit 1; }
+          test -f "$out/CNAME"             || { echo "::error::CNAME missing from build"; exit 1; }
+          grep -qx 'legacylaugar.com' "$out/CNAME" || { echo "::error::unexpected CNAME contents"; exit 1; }
+          test -f "$out/404.html"          || { echo "::error::404.html missing"; exit 1; }
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/legacy-lau-gar/browser
