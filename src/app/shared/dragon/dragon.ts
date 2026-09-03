@@ -14,7 +14,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   template: `
     <img
       class="dragon__img"
-      src="assets/dragon-placeholder.webp"
+      src="images/dragonHeader.webp"
       [attr.width]="size()"
       [attr.height]="size()"
       [alt]="decorative() ? '' : 'Legacy Lau Gar dragon logo'"
