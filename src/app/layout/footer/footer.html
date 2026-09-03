@@ -1,0 +1,71 @@
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <section class="site-footer__col">
+      <h2>Contact Us</h2>
+      <address>
+        {{ site.venue }}<br />
+        {{ site.street }}<br />
+        {{ site.town }}<br />
+        {{ site.postcode }}
+      </address>
+      <p>
+        <a [href]="site.phonePrimaryHref">Tel: {{ site.phonePrimary }}</a>
+      </p>
+    </section>
+
+    <section class="site-footer__col">
+      <h2>British Kung Fu Association</h2>
+      <p>
+        For more information on Lau Gar Kung Fu, please visit
+        <a [href]="site.bkfa.home" target="_blank" rel="noreferrer noopener">{{
+          site.bkfa.label
+        }}</a>
+      </p>
+      <a
+        class="site-footer__bkfa"
+        [href]="site.bkfa.home"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <img
+          src="images/BKFALogo.webp"
+          alt="British Kung Fu Association logo"
+          width="200"
+          height="76"
+          loading="lazy"
+        />
+      </a>
+    </section>
+
+    <section class="site-footer__col site-footer__brand">
+      <a routerLink="/" class="brand">
+        <app-logo [size]="44" variant="silver" [decorative]="true" />
+        <span>Legacy Lau&nbsp;Gar</span>
+      </a>
+      <nav class="site-footer__legal" aria-label="Legal">
+        <a routerLink="/privacy-policy">Privacy Policy</a>
+        <span aria-hidden="true">•</span>
+        <a routerLink="/terms-of-service">Terms of Service</a>
+      </nav>
+      <div class="site-footer__social">
+        <a
+          [href]="site.social.facebook"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Legacy Lau Gar on Facebook"
+        >
+          <app-icon name="facebook" [size]="22" />
+        </a>
+        <a
+          [href]="site.social.instagram"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Legacy Lau Gar on Instagram"
+        >
+          <app-icon name="instagram" [size]="22" />
+        </a>
+      </div>
+      <p class="site-footer__copy">© {{ year }} Legacy Lau Gar. All rights reserved.</p>
+    </section>
+  </div>
+</footer>

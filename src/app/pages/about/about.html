@@ -1,0 +1,128 @@
+<section class="section page-head">
+  <div class="container">
+    <p class="eyebrow">About</p>
+    <h1>About Legacy Lau Gar</h1>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="container about-grid">
+    <div class="prose" appReveal>
+      <h2>About Lau Gar</h2>
+      <p>
+        Lau Gar Kung Fu was first established in the UK in 1961 and has become one of the most
+        well known and successful styles in the UK.
+      </p>
+      <p>
+        For more information about the style visit
+        <a [href]="site.bkfa.origin" target="_blank" rel="noreferrer noopener"
+          >the British Kung Fu Association</a
+        >.
+      </p>
+    </div>
+    <a
+      class="about-bkfa card"
+      [href]="site.bkfa.home"
+      target="_blank"
+      rel="noreferrer noopener"
+      appReveal
+    >
+      <img
+        src="images/BKFALogo.webp"
+        alt="British Kung Fu Association logo"
+        width="240"
+        height="92"
+        loading="lazy"
+      />
+      <span>British Kung Fu Association <app-icon name="external" [size]="16" /></span>
+    </a>
+  </div>
+</section>
+
+<section class="section--tight section--alt">
+  <div class="container prose" appReveal>
+    <h2>About Our Club</h2>
+    <p>
+      Legacy Lau Gar has been established for over 40 years, training people from all levels of
+      fitness and knowledge. We specialise on developing your ability within Kung Fu and
+      self-defence.
+    </p>
+    <p>
+      For this style of Kung Fu, you do not need to be strong or fit to begin as we will help
+      you to work on your fitness and flexibility at your own pace, alongside teaching you the
+      art of Kung Fu.
+    </p>
+    <p>
+      You will be taught self-defence as well as the art itself which will in turn help to boost
+      self confidence and increase your level of fitness.
+    </p>
+  </div>
+</section>
+
+<section class="section team">
+  <div class="container">
+    <div class="team__head" appReveal>
+      <p class="eyebrow">Our Team</p>
+      <h2>Meet the instructors</h2>
+    </div>
+    <div class="team__grid">
+      @for (person of team; track person.name) {
+        <article class="team-card card" appReveal>
+          <img
+            class="team-card__photo"
+            [ngSrc]="person.image"
+            width="120"
+            height="120"
+            [alt]="'Instructor ' + person.name"
+          />
+          <div>
+            <h3>{{ person.name }}</h3>
+            <p>@for (segment of person.bio; track $index) {
+              @if (segment.href; as href) {
+                <a [href]="href" target="_blank" rel="noreferrer noopener">{{ segment.text }}</a>
+              } @else {
+                {{ segment.text }}
+              }
+            }</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section--tight section--alt">
+  <div class="container contact-numbers" appReveal>
+    <div>
+      <p class="eyebrow">Contact Numbers</p>
+      <h2>Call or text the club</h2>
+    </div>
+    <p class="contact-numbers__list">
+      <a [href]="site.phonePrimaryHref">{{ site.phonePrimary }}</a>
+      <span aria-hidden="true">&mdash;</span>
+      <a [href]="site.phoneSecondaryHref">{{ site.phoneSecondary }}</a>
+    </p>
+  </div>
+</section>
+
+<section class="section safeguarding">
+  <div class="container safeguarding__inner" appReveal>
+    <img
+      src="images/safeguarding-tick.webp"
+      alt="British Kung Fu Association safeguarding accreditation"
+      width="110"
+      height="110"
+      loading="lazy"
+    />
+    <div>
+      <h2>Safeguarding</h2>
+      <p>
+        The British Kung Fu Association is committed to child protection and safeguarding.
+      </p>
+      <a class="btn btn--ghost" [href]="site.bkfa.safeguarding" target="_blank" rel="noreferrer noopener">
+        BKFA Child Protection &amp; Safeguarding
+        <app-icon name="external" [size]="16" />
+      </a>
+    </div>
+  </div>
+</section>

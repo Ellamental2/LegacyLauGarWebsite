@@ -1,0 +1,50 @@
+<section class="section page-head">
+  <div class="container">
+    <p class="eyebrow">Social Media</p>
+    <h1>Connect With Us</h1>
+    <p class="lede">
+      Follow Legacy Lau Gar on social media for the latest updates, training tips, and community
+      news!
+    </p>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="container social-grid">
+    @for (card of cards; track card.platform) {
+      <article class="social-card card" [class]="card.modifier" appReveal>
+        <header class="social-card__head">
+          <app-icon [name]="card.icon" [size]="28" />
+          <div>
+            <h2>{{ card.platform }}</h2>
+            <p class="social-card__handle">{{ card.handle }}</p>
+          </div>
+        </header>
+        <p>{{ card.blurb }}</p>
+        <ul class="social-card__list">
+          @for (item of card.bullets; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+        <a class="btn" [href]="card.url" target="_blank" rel="noreferrer noopener">
+          {{ card.cta }}
+          <app-icon name="external" [size]="16" />
+        </a>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="section--alt section--tight">
+  <div class="container social-cta" appReveal>
+    <h2>Ready to Start Training?</h2>
+    <p>Contact us today to learn more about our Lau Gar Kung Fu classes!</p>
+    <div class="social-cta__actions">
+      <a routerLink="/contact" class="btn">Get In Touch</a>
+      <a [href]="site.phonePrimaryHref" class="btn btn--ghost">
+        <app-icon name="phone" [size]="18" />
+        {{ site.phonePrimary }}
+      </a>
+    </div>
+  </div>
+</section>

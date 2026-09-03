@@ -1,0 +1,33 @@
+<section class="section page-head">
+  <div class="container">
+    <p class="eyebrow">Sessions</p>
+    <h1>Upcoming Training Sessions</h1>
+    <p class="lede">
+      {{ site.trainingDay }} evenings, {{ site.trainingTime }} at {{ site.venue }},
+      {{ site.town }}.
+    </p>
+  </div>
+</section>
+
+<section class="section--tight" ngSkipHydration>
+  <div class="container">
+    <div class="sessions-block" appReveal>
+      <app-sessions-table
+        [rows]="sessions()"
+        emptyText="The next sessions will be listed here soon."
+      />
+    </div>
+
+    <div class="sessions-block" appReveal>
+      <h2>Other Events</h2>
+      <p class="lede">
+        All British Kung Fu Association events can be found on the
+        <a [href]="site.bkfa.calendar" target="_blank" rel="noreferrer noopener">BKFA calendar</a>.
+      </p>
+      <app-sessions-table
+        [rows]="events()"
+        emptyText="No upcoming events listed at the moment."
+      />
+    </div>
+  </div>
+</section>

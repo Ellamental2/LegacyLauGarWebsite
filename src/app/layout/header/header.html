@@ -1,0 +1,55 @@
+<header class="site-header" [class.site-header--scrolled]="scrolled()">
+  <div class="site-header__bar container">
+    <a routerLink="/" class="brand" aria-label="Legacy Lau Gar — home">
+      <app-logo [size]="46" [decorative]="true" />
+      <span class="brand__name">Legacy Lau&nbsp;Gar</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        @for (link of links; track link.path) {
+          <li>
+            <a
+              [routerLink]="link.path"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+              [class.nav-cta]="link.label === 'Sessions'"
+            >
+              {{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <button
+      type="button"
+      class="nav-toggle"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-nav"
+      (click)="toggleMenu()"
+    >
+      <app-icon [name]="menuOpen() ? 'close' : 'menu'" [size]="24" />
+      <span class="visually-hidden">{{ menuOpen() ? 'Close menu' : 'Open menu' }}</span>
+    </button>
+  </div>
+
+  <div id="mobile-nav" class="nav-mobile" [class.is-open]="menuOpen()">
+    <nav aria-label="Primary (mobile)">
+      <ul>
+        @for (link of links; track link.path) {
+          <li>
+            <a
+              [routerLink]="link.path"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+            >
+              {{ link.label }}
+              <app-icon name="arrow-right" [size]="18" />
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

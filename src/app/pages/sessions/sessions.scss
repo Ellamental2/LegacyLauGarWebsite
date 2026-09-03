@@ -1,0 +1,16 @@
+.page-head {
+  padding-block: clamp(2.5rem, 7vw, 4.5rem);
+}
+.page-head .lede {
+  margin-top: 1rem;
+}
+
+.sessions-block + .sessions-block {
+  margin-top: clamp(2.5rem, 7vw, 4rem);
+}
+.sessions-block h2 {
+  margin-bottom: 0.5rem;
+}
+.sessions-block .lede {
+  margin-bottom: 1.25rem;
+}
