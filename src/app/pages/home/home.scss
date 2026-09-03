@@ -57,8 +57,17 @@
   justify-content: center;
 
   app-logo {
-    filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.55));
+    filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.55));
     max-width: 100%;
+    transform: scale(0.72);
+    transform-origin: center;
+
+    @include bp(md) {
+      transform: scale(0.86);
+    }
+    @include bp(lg) {
+      transform: none;
+    }
   }
 }
 
