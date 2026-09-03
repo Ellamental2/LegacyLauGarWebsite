@@ -1,15 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Dragon } from '../../shared/dragon/dragon';
+import { Logo } from '../../shared/logo/logo';
 
 @Component({
   selector: 'app-thank-you',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Dragon],
+  imports: [RouterLink, Logo],
   template: `
     <section class="section thanks">
       <div class="container thanks__inner">
-        <app-dragon [size]="140" [decorative]="true" />
+        <app-logo [size]="140" [decorative]="true" />
         <h1>Thank you &mdash; your form has been submitted.</h1>
         <p>We will get back to you as soon as possible!</p>
         <a routerLink="/" class="btn">Back to home</a>

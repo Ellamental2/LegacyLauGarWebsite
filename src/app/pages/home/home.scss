@@ -56,9 +56,13 @@
   display: flex;
   justify-content: center;
 
-  app-dragon {
+  app-logo {
     filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.55));
     max-width: 100%;
+  }
+  app-logo svg {
+    width: min(100%, 380px);
+    height: auto;
   }
 }
 

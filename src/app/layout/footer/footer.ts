@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SITE_INFO } from '../../core/site-info';
-import { Dragon } from '../../shared/dragon/dragon';
+import { Logo } from '../../shared/logo/logo';
 import { Icon } from '../../shared/icon/icon';
 
 @Component({
   selector: 'app-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Dragon, Icon],
+  imports: [RouterLink, Logo, Icon],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })

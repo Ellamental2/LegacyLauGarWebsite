@@ -11,13 +11,13 @@ import {
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs';
 import { NAV_LINKS } from '../../core/site-info';
-import { Dragon } from '../../shared/dragon/dragon';
+import { Logo } from '../../shared/logo/logo';
 import { Icon } from '../../shared/icon/icon';
 
 @Component({
   selector: 'app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, RouterLinkActive, Dragon, Icon],
+  imports: [RouterLink, RouterLinkActive, Logo, Icon],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

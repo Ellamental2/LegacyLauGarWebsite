@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgOptimizedImage } from '@angular/common';
 import { SITE_INFO } from '../../core/site-info';
-import { Dragon } from '../../shared/dragon/dragon';
+import { Logo } from '../../shared/logo/logo';
 import { Icon } from '../../shared/icon/icon';
 import { MapEmbed } from '../../shared/map-embed/map-embed';
 import { Reveal } from '../../shared/reveal/reveal';
@@ -16,7 +16,7 @@ interface Benefit {
 @Component({
   selector: 'app-home',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, NgOptimizedImage, Dragon, Icon, MapEmbed, Reveal],
+  imports: [RouterLink, NgOptimizedImage, Logo, Icon, MapEmbed, Reveal],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
