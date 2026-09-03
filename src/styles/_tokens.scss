@@ -1,0 +1,62 @@
+// ---------------------------------------------------------------------------
+// Design tokens — the single source of truth for colour, type scale & spacing.
+// Dark-only, black + gold. Do not hard-code colours anywhere else.
+// ---------------------------------------------------------------------------
+:root {
+  // Surfaces (unifies the old #131313 / #141414 / #151515 greys)
+  --bg: #121212;
+  --surface: #1a1a1a;
+  --surface-2: #222222;
+  --surface-3: #2b2b2b;
+  --border: #2e2e2e;
+  --border-strong: #3d3d3d;
+
+  // Accent — gold. Used sparingly: rules, icons, buttons, focus, the mark.
+  --gold: #ffd700;
+  --gold-deep: #b8860b;
+  --gold-contrast: #121212;
+  --gold-glow: rgba(255, 215, 0, 0.25);
+
+  // Text
+  --text: #ededed;
+  --text-muted: #b0b0b0;
+  --text-dim: #8a8a8a;
+
+  // Feedback (form validation only — never decorative)
+  --danger: #e5484d;
+  --success: #46c26a;
+
+  // Radii & elevation
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.55);
+
+  // Layout
+  --maxw: 1200px;
+  --maxw-prose: 66ch;
+  --gutter: clamp(1rem, 5vw, 3rem);
+  --section-y: clamp(3.5rem, 9vw, 7rem);
+  --header-h: 68px;
+
+  // Focus ring
+  --focus-ring: 0 0 0 3px var(--bg), 0 0 0 5px var(--gold);
+
+  // Typography
+  --font-sans: 'Public Sans Variable', 'Public Sans', system-ui, -apple-system,
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.4rem);
+  --step-2: clamp(1.44rem, 1.28rem + 0.8vw, 1.85rem);
+  --step-3: clamp(1.73rem, 1.5rem + 1.15vw, 2.4rem);
+  --step-4: clamp(2.07rem, 1.72rem + 1.75vw, 3.1rem);
+  --step-5: clamp(2.49rem, 1.98rem + 2.55vw, 4rem);
+
+  --transition: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  color-scheme: dark;
+}

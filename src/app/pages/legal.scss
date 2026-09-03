@@ -1,0 +1,11 @@
+.legal-head {
+  padding-block: clamp(2.5rem, 7vw, 4.5rem) clamp(1rem, 3vw, 2rem);
+}
+.legal-head p {
+  margin-top: 0.5rem;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+.legal-body {
+  padding-bottom: var(--section-y);
+}

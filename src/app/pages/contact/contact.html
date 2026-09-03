@@ -1,0 +1,98 @@
+<section class="section page-head">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h1>Contact the Club</h1>
+    <p class="lede">
+      If you are interested in joining the club or would like more information please feel free
+      to reach out by text, telephone or by filling out the form.
+    </p>
+    <p class="contact-tel">
+      <app-icon name="phone" [size]="20" />
+      <a [href]="site.phonePrimaryHref">Tel: {{ site.phonePrimary }}</a>
+    </p>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="container contact-grid">
+    <form
+      class="contact-form card"
+      [action]="site.contactFormAction"
+      method="POST"
+      #form="ngForm"
+      #formEl
+      (ngSubmit)="onSubmit(form)"
+      appReveal
+    >
+      <input type="hidden" name="_next" [value]="nextUrl" />
+      <input type="hidden" name="_subject" value="Website Contact Us Form Submission" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="text" name="_honey" class="visually-hidden" tabindex="-1" autocomplete="off" />
+
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required ngModel #name="ngModel" autocomplete="name" />
+        @if (name.invalid && (name.touched || form.submitted)) {
+          <p class="field__error">Please enter your name.</p>
+        }
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          email
+          ngModel
+          #email="ngModel"
+          autocomplete="email"
+          placeholder="Email Address"
+        />
+        @if (email.invalid && (email.touched || form.submitted)) {
+          <p class="field__error">Please enter a valid email address.</p>
+        }
+      </div>
+
+      <div class="field">
+        <label for="subject">Subject <span class="field__opt">(optional)</span></label>
+        <input id="subject" name="subject" type="text" ngModel />
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          required
+          ngModel
+          #message="ngModel"
+        ></textarea>
+        @if (message.invalid && (message.touched || form.submitted)) {
+          <p class="field__error">Please enter a message.</p>
+        }
+      </div>
+
+      <button type="submit" class="btn" [disabled]="form.submitted && form.invalid">
+        Send
+        <app-icon name="arrow-right" [size]="18" />
+      </button>
+    </form>
+
+    <aside class="contact-aside" appReveal>
+      <app-map-embed />
+      <div class="card contact-aside__details">
+        <h2>Find us</h2>
+        <address>
+          {{ site.venue }}<br />
+          {{ site.street }}<br />
+          {{ site.town }} {{ site.postcode }}
+        </address>
+        <p><a [href]="site.phonePrimaryHref">{{ site.phonePrimary }}</a></p>
+        <p><a [href]="'mailto:' + site.email">{{ site.email }}</a></p>
+      </div>
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__content" appReveal>
+      <p class="eyebrow">Nuneaton &middot; Established 40+ years</p>
+      <h1 class="hero__title">
+        Legacy Lau Gar
+        <span class="hero__title-sub">Kung Fu</span>
+      </h1>
+      <p class="hero__standfirst">
+        Legacy Lau Gar Nuneaton has been established for over 40 years, we are now looking for
+        new members to join us.
+      </p>
+      <p class="hero__body">
+        You do not need to be strong or fit to do this style. We will help you increase your
+        fitness and flexibility at your own pace while you learn the art of kung fu. You will be
+        taught self-defence as well as the art itself &mdash; it helps boost self-confidence and
+        increases your level of fitness.
+      </p>
+      <div class="hero__actions">
+        <a routerLink="/contact" class="btn">
+          Contact Us For More Info
+          <app-icon name="arrow-right" [size]="18" />
+        </a>
+        <a routerLink="/sessions" class="btn btn--ghost">See training sessions</a>
+      </div>
+    </div>
+
+    <div class="hero__art" aria-hidden="true">
+      <app-dragon [size]="380" [decorative]="true" />
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt location">
+  <div class="container location__inner">
+    <div appReveal>
+      <p class="eyebrow">Where &amp; when</p>
+      <h2>{{ site.trainingDay }} Training Sessions {{ site.trainingTime }}</h2>
+      <p class="lede">Elite Sports Center Nuneaton</p>
+      <address class="location__address">
+        {{ site.venue }}, {{ site.street }}, {{ site.town }} {{ site.postcode }}
+      </address>
+      <a class="btn btn--ghost" routerLink="/contact">Get directions &amp; contact</a>
+    </div>
+    <app-map-embed appReveal />
+  </div>
+</section>
+
+<section class="section benefits">
+  <div class="container">
+    <div class="benefits__head" appReveal>
+      <p class="eyebrow">Why train with us</p>
+      <h2>Try your first lesson for free!</h2>
+      <p class="lede">
+        Kung Fu builds more than technique. Every session works your whole body and mind.
+      </p>
+    </div>
+
+    <ul class="benefits__grid">
+      @for (benefit of benefits; track benefit.title) {
+        <li class="benefit-card" appReveal>
+          <div class="benefit-card__media">
+            <img
+              [ngSrc]="benefit.image"
+              fill
+              sizes="(min-width: 768px) 25vw, 90vw"
+              [alt]="benefit.title + ' training at Legacy Lau Gar'"
+            />
+          </div>
+          <div class="benefit-card__body">
+            <h3>{{ benefit.title }}</h3>
+            <p>{{ benefit.copy }}</p>
+          </div>
+        </li>
+      }
+    </ul>
+
+    <div class="benefits__cta" appReveal>
+      <a routerLink="/contact" class="btn">Book your free lesson</a>
+    </div>
+  </div>
+</section>

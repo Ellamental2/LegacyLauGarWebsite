@@ -1,0 +1,98 @@
+@use '../../../styles/mixins' as *;
+
+.site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr;
+
+  @include bp(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include bp(lg) {
+    grid-template-columns: 1.2fr 1.2fr 1fr;
+  }
+}
+
+.site-footer__col h2 {
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.9rem;
+}
+
+.site-footer address {
+  font-style: normal;
+  line-height: 1.8;
+}
+
+.site-footer a {
+  color: var(--text);
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: var(--gold);
+}
+
+.site-footer__bkfa {
+  display: inline-block;
+  margin-top: 1rem;
+}
+.site-footer__bkfa img {
+  height: auto;
+  width: min(200px, 60%);
+}
+
+.site-footer__brand .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.1rem;
+}
+
+.site-footer__social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.1rem;
+}
+.site-footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  color: var(--text-muted);
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+.site-footer__social a:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.site-footer__copy {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}

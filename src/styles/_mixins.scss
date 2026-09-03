@@ -1,0 +1,25 @@
+@use 'sass:map';
+
+// Breakpoint helpers — mobile-first (min-width).
+$breakpoints: (
+  'sm': 480px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+);
+
+@mixin bp($name) {
+  @if map.has-key($breakpoints, $name) {
+    @media (min-width: map.get($breakpoints, $name)) {
+      @content;
+    }
+  } @else {
+    @error 'Unknown breakpoint `#{$name}`.';
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
