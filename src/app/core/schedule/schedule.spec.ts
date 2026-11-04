@@ -31,13 +31,13 @@ describe('ScheduleService', () => {
     });
 
     it('applies SPECIAL_WEEKS overrides on the matching dates', () => {
-      const sessions = service.calculateTrainingSessions(5, new Date(2026, 6, 6));
+      const sessions = service.calculateTrainingSessions(6, new Date(2026, 11, 7));
       const byDate = new Map(sessions.map((s) => [s.date.getTime(), s.session]));
-      expect(byDate.get(new Date(2026, 6, 6).getTime())).toBe('Sets and Applications');
-      expect(byDate.get(new Date(2026, 6, 13).getTime())).toBe('Kicks/Punches and Sparring');
-      expect(byDate.get(new Date(2026, 6, 20).getTime())).toBe('Walks, Knife and Stick Defense');
+      expect(byDate.get(new Date(2026, 11, 7).getTime())).toBe('Open Session'); // not week 8
+      expect(byDate.get(new Date(2026, 11, 14).getTime())).toBe('Closed for the Holidays');
+      expect(byDate.get(new Date(2027, 0, 4).getTime())).toBe('Closed for the Holidays');
       // Rotation keeps advancing through the overrides.
-      expect(byDate.get(new Date(2026, 6, 27).getTime())).toBe('Open Lesson'); // week 9
+      expect(byDate.get(new Date(2027, 0, 11).getTime())).toBe('Kicks/Punches and Sets'); // week 3
     });
 
     it('adds non-Monday SPECIAL_WEEKS entries as extra rows in date order', () => {
@@ -59,28 +59,29 @@ describe('ScheduleService', () => {
 
   describe('upcomingEvents', () => {
     it('returns future events only, soonest first, capped at max', () => {
-      const events = service.upcomingEvents(5, new Date(2026, 6, 1));
+      const events = service.upcomingEvents(5, new Date(2026, 10, 1));
       expect(events).toHaveLength(5);
-      expect(events[0].description).toBe('Brown Sash Course. 11am - 3pm');
-      expect(events[0].date).toEqual(new Date(2026, 6, 19));
+      expect(events[0].description).toBe('Instructors Course. 11am - 4pm');
+      expect(events[0].date).toEqual(new Date(2026, 10, 22));
       for (let i = 1; i < events.length; i++) {
         expect(events[i].date.getTime()).toBeGreaterThanOrEqual(events[i - 1].date.getTime());
       }
     });
 
     it('keeps a multi-day event until its end date passes', () => {
-      const events = service.upcomingEvents(10, new Date(2026, 6, 28));
+      const events = service.upcomingEvents(10, new Date(2027, 6, 28));
       const summer = events.find((e) => e.description === 'BKFA Summer Course');
       expect(summer).toBeDefined();
-      expect(summer!.endDate).toEqual(new Date(2026, 7, 1));
+      expect(summer!.endDate).toEqual(new Date(2027, 6, 31));
     });
 
     it('drops events once they are fully in the past', () => {
-      const events = service.upcomingEvents(10, new Date(2026, 9, 1));
+      const events = service.upcomingEvents(10, new Date(2027, 9, 1));
       expect(events.map((e) => e.description)).toEqual([
-        'Coaching Level 2. 9am - 1pm',
-        'Black Sash Grading. 10am - 1pm',
+        'Coaching 2. 9am - 1pm',
+        'BKFA Black Sash Grading. 10am - 1pm',
         'Instructors Course. 11am - 4pm',
+        'Guardian Training',
       ]);
     });
   });
