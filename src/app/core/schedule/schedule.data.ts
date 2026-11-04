@@ -62,7 +62,7 @@ export const OTHER_EVENTS: readonly ClubEvent[] = [
 ];
 
 /** Anchor: on this date the rotation is at week `SEED_WEEK`. Format: "dd/MM/yyyy". */
-export const SEED_DATE = '05/01/2026';
+export const SEED_DATE = '11/01/2027';
 export const SEED_WEEK = 0;
 
 /** The curriculum runs on Mondays (Date.getDay() === 1). */

@@ -24,9 +24,9 @@ describe('ScheduleService', () => {
     });
 
     it('stays aligned to the 10-week rotation from the seed', () => {
-      // 05/01/2026 is seed week 0; the following Monday (12/01) is week 1.
-      const [first] = service.calculateTrainingSessions(1, new Date(2026, 0, 12));
-      expect(first.date).toEqual(new Date(2026, 0, 12));
+      // 11/01/2027 is seed week 0; the following Monday (18/01) is week 1.
+      const [first] = service.calculateTrainingSessions(1, new Date(2027, 0, 18));
+      expect(first.date).toEqual(new Date(2027, 0, 18));
       expect(first.session).toBe('Hand Blocks and Kick Blocks'); // TRAINING_PLAN[1]
     });
 
@@ -36,8 +36,8 @@ describe('ScheduleService', () => {
       expect(byDate.get(new Date(2026, 11, 7).getTime())).toBe('Open Session'); // not week 8
       expect(byDate.get(new Date(2026, 11, 14).getTime())).toBe('Closed for the Holidays');
       expect(byDate.get(new Date(2027, 0, 4).getTime())).toBe('Closed for the Holidays');
-      // Rotation keeps advancing through the overrides.
-      expect(byDate.get(new Date(2027, 0, 11).getTime())).toBe('Kicks/Punches and Sets'); // week 3
+      // Rotation picks back up at the seed once the overrides end.
+      expect(byDate.get(new Date(2027, 0, 11).getTime())).toBe('Walks and Sets'); // week 0
     });
 
     it('adds non-Monday SPECIAL_WEEKS entries as extra rows in date order', () => {
@@ -51,9 +51,10 @@ describe('ScheduleService', () => {
     });
 
     it('handles dates before the seed without producing an undefined session', () => {
-      const [first] = service.calculateTrainingSessions(1, new Date(2025, 10, 17));
-      expect(first.date).toEqual(new Date(2025, 10, 17));
-      expect(first.session).toBe('Kicks/Punches and Sets'); // negative-safe modulo -> index 3
+      // 12 weeks before the seed, and not a SPECIAL_WEEKS date.
+      const [first] = service.calculateTrainingSessions(1, new Date(2026, 9, 19));
+      expect(first.date).toEqual(new Date(2026, 9, 19));
+      expect(first.session).toBe('Kicks/Punches and Sparring'); // negative-safe modulo -> index 8
     });
   });
 
