@@ -29,7 +29,7 @@ export class Sessions {
 
   private toSessionRows(): SessionRow[] {
     return this.schedule
-      .calculateTrainingSessions(15)
+      .calculateTrainingSessions(5)
       .map((s) => ({ date: s.date, label: s.session }));
   }
 
