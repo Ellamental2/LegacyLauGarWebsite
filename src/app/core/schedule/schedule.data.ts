@@ -17,11 +17,22 @@ export const TRAINING_PLAN: Readonly<Record<number, string>> = {
   9: 'Open Lesson',
 };
 
-/** One-off overrides for specific dates. Key format: "dd/MM/yyyy". */
+/**
+ * One-off overrides for specific dates. Key format: "dd/MM/yyyy".
+ * A Monday replaces that week's session; any other day is shown as an extra row.
+ */
 export const SPECIAL_WEEKS: Readonly<Record<string, string>> = {
   // 'dd/MM/yyyy': 'Open Session - Swords and Sticks',
-  '13/07/2026': 'Kicks/Punches and Sparring',
-  '20/07/2026': 'Walks, Knife and Stick Defense',
+  '09/11/2026':'Conditioning and Sparring',
+  '16/11/2026':'Hand Blocks and Kick Blocks',
+  '23/11/2026':'Sets and Applications',
+  '30/11/2026': 'Walks, Knife and Stick Defense',
+  '07/12/2026': 'Open Session',
+  '14/12/2026': 'Closed for the Holidays',
+  '15/12/2026': 'Club Social - Meal',
+  '21/12/2026': 'Closed for the Holidays',
+  '28/12/2026': 'Closed for the Holidays',
+  '04/01/2027': 'Closed for the Holidays',
 };
 
 export interface ClubEvent {
@@ -33,13 +44,21 @@ export interface ClubEvent {
 }
 
 export const OTHER_EVENTS: readonly ClubEvent[] = [
-  { date: '2026-07-19', description: 'Brown Sash Course. 11am - 3pm', endDate: null },
-  { date: '2026-07-26', description: 'BKFA Summer Course', endDate: '2026-08-01' },
-  { date: '2026-09-06', description: 'Brown Sash Course. 11am - 3pm', endDate: null },
-  { date: '2026-09-20', description: 'Weapons Workshop. 10am - 4pm', endDate: null },
-  { date: '2026-10-04', description: 'Coaching Level 2. 9am - 1pm', endDate: null },
-  { date: '2026-10-18', description: 'Black Sash Grading. 10am - 1pm', endDate: null },
   { date: '2026-11-22', description: 'Instructors Course. 11am - 4pm', endDate: null },
+  { date: '2027-01-24', description: 'Anatomy and Physiology. 9am - 1pm', endDate: null },
+  { date: '2027-02-21', description: 'Brown Sash Course. 10am - 4pm', endDate: null },
+  { date: '2027-03-14', description: 'First Aid. 10am - 7pm', endDate: null },
+  { date: '2027-03-21', description: 'Coaching 1. 9am - 1pm', endDate: null },
+  { date: '2027-04-23', description: 'Lau Family Training (LFT)', endDate: '2027-04-25' },
+  { date: '2027-05-16', description: 'BKFA Black Sash Grading. 10am - 1pm', endDate: null },
+  { date: '2027-06-05', description: 'Lau Gar Ireland Training Camp 50th Anniversary', endDate: '2027-06-07' },
+  { date: '2027-07-18', description: 'Brown Sash Course. 10am - 4pm', endDate: null },
+  { date: '2027-07-25', description: 'BKFA Summer Course', endDate: '2027-07-31' },
+  { date: '2027-09-19', description: 'Weapons Course. 10am - 4pm', endDate: null },
+  { date: '2027-10-03', description: 'Coaching 2. 9am - 1pm', endDate: null },
+  { date: '2027-10-17', description: 'BKFA Black Sash Grading. 10am - 1pm', endDate: null },
+  { date: '2027-11-07', description: 'Instructors Course. 11am - 4pm', endDate: null },
+  { date: '2027-11-20', description: 'Guardian Training', endDate: '2027-11-21' },
 ];
 
 /** Anchor: on this date the rotation is at week `SEED_WEEK`. Format: "dd/MM/yyyy". */

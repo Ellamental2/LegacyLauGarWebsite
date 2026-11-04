@@ -184,6 +184,17 @@ button {
 .btn:active {
   transform: translateY(0);
 }
+// Disabled reverses the colours and switches off the hover lift.
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  --_bg: var(--gold-contrast);
+  --_fg: var(--gold);
+  background: var(--_bg);
+  border-color: var(--gold);
+  transform: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
 
 .btn--ghost {
   --_bg: transparent;

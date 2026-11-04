@@ -40,6 +40,16 @@ describe('ScheduleService', () => {
       expect(byDate.get(new Date(2026, 6, 27).getTime())).toBe('Open Lesson'); // week 9
     });
 
+    it('adds non-Monday SPECIAL_WEEKS entries as extra rows in date order', () => {
+      const sessions = service.calculateTrainingSessions(3, new Date(2026, 11, 7));
+      expect(sessions.map((s) => [s.date, s.session])).toEqual([
+        [new Date(2026, 11, 7), expect.any(String)],
+        [new Date(2026, 11, 14), 'Closed for the Holidays'],
+        [new Date(2026, 11, 15), 'Club Social - Meal'],
+        [new Date(2026, 11, 21), 'Closed for the Holidays'],
+      ]);
+    });
+
     it('handles dates before the seed without producing an undefined session', () => {
       const [first] = service.calculateTrainingSessions(1, new Date(2025, 10, 17));
       expect(first.date).toEqual(new Date(2025, 10, 17));

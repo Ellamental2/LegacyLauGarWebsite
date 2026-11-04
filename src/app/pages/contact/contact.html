@@ -60,7 +60,7 @@
         <input id="subject" name="subject" type="text" ngModel />
       </div>
 
-      <div class="field">
+      <div class="field field--grow">
         <label for="message">Message</label>
         <textarea
           id="message"
@@ -80,7 +80,6 @@
         <app-icon name="arrow-right" [size]="18" />
       </button>
     </form>
-
     <aside class="contact-aside" appReveal>
       <app-map-embed />
       <div class="card contact-aside__details">
@@ -94,5 +93,16 @@
         <p><a [href]="'mailto:' + site.email">{{ site.email }}</a></p>
       </div>
     </aside>
+
+    <div class="card contact-membership" appReveal>
+      <p>If you have already visited us and want to register as a member click here</p>
+      <a
+        class="btn"
+        href="https://forms.gle/TdDyFCirdZhHEQXM7"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Membership Form</a
+      >
+    </div>
   </div>
 </section>

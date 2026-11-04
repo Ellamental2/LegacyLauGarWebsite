@@ -8,6 +8,8 @@ interface BioSegment {
   text: string;
   /** When set, the segment renders as an external link. */
   href?: string;
+  /** When set, the segment renders in bold. */
+  strong?: boolean;
 }
 
 interface Instructor {
@@ -51,5 +53,14 @@ export class About {
         },
       ],
     },
+    {
+      name: 'Ellam',
+      image: 'images/Ellam.png',
+      bio : [
+        { text: 'Ellam passed his 1st Degree Black Sash in 2025 and is now an ' },
+        { text: 'Assistant Instructor.', strong: true },
+        { text: ' He is also the developer of this website and manages our social media.' },
+      ]
+    }
   ];
 }

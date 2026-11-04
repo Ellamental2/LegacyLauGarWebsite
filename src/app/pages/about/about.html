@@ -80,6 +80,8 @@
             <p>@for (segment of person.bio; track $index) {
               @if (segment.href; as href) {
                 <a [href]="href" target="_blank" rel="noreferrer noopener">{{ segment.text }}</a>
+              } @else if (segment.strong) {
+                <strong>{{ segment.text }}</strong>
               } @else {
                 {{ segment.text }}
               }

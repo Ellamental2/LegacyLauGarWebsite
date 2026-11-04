@@ -22,9 +22,10 @@ export interface SessionRow {
                 {{ row.date | date: 'd MMMM yyyy' }}
               </time>
               @if (row.endDate) {
-                <span class="sessions-list__range"
-                  >&ndash; {{ row.endDate | date: 'd MMMM yyyy' }}</span
-                >
+                &ndash;
+                <time [attr.datetime]="row.endDate | date: 'yyyy-MM-dd'">
+                  {{ row.endDate | date: 'd MMMM yyyy' }}
+                </time>
               }
             </span>
             <span class="sessions-list__label">{{ row.label }}</span>

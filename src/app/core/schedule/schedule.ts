@@ -45,7 +45,8 @@ function parseIso(value: string): Date {
 export class ScheduleService {
   /**
    * The next `count` Monday training sessions from `now`, applying the 10-week
-   * rotation plus any one-off overrides in `SPECIAL_WEEKS`.
+   * rotation plus any one-off overrides in `SPECIAL_WEEKS`. Non-Monday entries
+   * in `SPECIAL_WEEKS` are added as extra rows, so the result may exceed `count`.
    *
    * Faithful port of the original `calculateTrainingSessions()`.
    */
@@ -87,6 +88,22 @@ export class ScheduleService {
       sessionDate.setDate(sessionDate.getDate() + 7);
       sessionWeek = (sessionWeek + 1) % ROTATION_LENGTH;
     }
+
+    // Off-day entries (e.g. a Tuesday social) are slotted in as extra rows
+    // within the range already covered, so they don't push Mondays out.
+    const lastSession = sessions[sessions.length - 1]?.date;
+    for (const [key, label] of Object.entries(SPECIAL_WEEKS)) {
+      const date = parseUk(key);
+      if (
+        date.getDay() !== TRAINING_WEEKDAY &&
+        lastSession &&
+        date >= currentDate &&
+        date <= lastSession
+      ) {
+        sessions.push({ date, session: label });
+      }
+    }
+    sessions.sort((a, b) => a.date.getTime() - b.date.getTime());
 
     return sessions;
   }
