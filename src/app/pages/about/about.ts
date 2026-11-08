@@ -49,7 +49,7 @@ export class About {
         {
           text:
             'Steve has been training in Lau Gar for over 40 years and has been teaching for ' +
-            'over 30 years. He is a 4th Degree Black Sash, specialising in weapons.',
+            'over 30 years. He is a 5th Degree Black Sash, specialising in weapons.',
         },
       ],
     },
